@@ -1,11 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
 
 module.exports = {
     mode: "development",
     entry: {
-        vendors: path.join(__dirname, "src", "style", "style.scss")
+        vendors: path.join(__dirname, "src", "vendors.js"),
     },
     output: {
         filename: "index.js",
@@ -13,7 +12,7 @@ module.exports = {
     },
     devServer: {
         contentBase: "./www",
-        host: '0.0.0.0'
+        host: 'localhost'
     },
     module: {
         rules: [
@@ -26,25 +25,16 @@ module.exports = {
             },
             {
                 test: /\.(sass|scss)$/,
-                use: [{
-                    loader: 'style-loader',
-                }, {
-                    loader: 'css-loader',
-                },
-                    //     {
-                    //     loader: 'postcss-loader',
-                    //     options: {
-                    //         plugins: function () {
-                    //             return [
-                    //                 require('precss'),
-                    //                 require('autoprefixer')
-                    //             ];
-                    //         }
-                    //     }
-                    // },
+                use: [
+                    {
+                        loader: 'style-loader',
+                    }, {
+                        loader: 'css-loader',
+                    },
                     {
                         loader: 'sass-loader'
-                    }]
+                    }
+                ]
             },
             {
                 test: /\.(png|jpe?g|img|svg)$/,
@@ -63,9 +53,8 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, "src", "index.pug"),
+            template: path.join(__dirname, "index.pug"),
             filename: path.join(__dirname, "dist", "index.html")
-        }),
-        new CleanWebpackPlugin()
+        })
     ]
 };

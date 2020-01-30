@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/Andrejvmire/FSD-educ_2-task#readme",
   "devDependencies": {
-    "clean-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^3.2.0",
     "pug": "^2.0.4",
     "webpack": "^4.41.5",
