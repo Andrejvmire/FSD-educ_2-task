@@ -1,5 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Webpack = require('webpack');
+const JQuery = require('jquery');
 
 module.exports = {
     mode: "development",
@@ -46,7 +48,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.(ttf|woff|svg)$/,
+                test: /\.(ttf|woff|svg|woff2|eot)$/,
                 loader: "file-loader"
             }
         ]
@@ -55,6 +57,9 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: path.join(__dirname, "index.pug"),
             filename: path.join(__dirname, "dist", "index.html")
+        }),
+        new Webpack.ProvidePlugin({
+            $: JQuery
         })
     ]
 };
