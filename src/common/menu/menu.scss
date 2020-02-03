@@ -1,0 +1,27 @@
+.menu {
+  display: grid;
+  grid-template-areas: "item count";
+  grid-template-columns: 1fr 92px;
+  grid-template-rows: repeat(auto-fit, 1fr);
+  position: absolute;
+  background: #FFFFFF;
+  border: 1px solid $dark50;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 13px 7px 13px 15px;
+
+  &__item {
+    display: inline-block;
+    grid-area: item;
+    @extend h3;
+  }
+
+  &__count {
+    display: inline-block;
+    grid-area: count;
+  }
+
+  &-hide {
+    display: none;
+  }
+}

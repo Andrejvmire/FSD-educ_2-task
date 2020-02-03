@@ -1,0 +1,9 @@
+$dark: #1F2041;
+$green: #6FCF97;
+$purple: #BC9CFF;
+$white: #FFFFFF;
+
+$dark75: scale_color($dark, $alpha: -25%);
+$dark50: scale_color($dark, $alpha: -50%);
+$dark25: scale_color($dark, $alpha: -75%);
+$dark05: scale_color($dark, $alpha: -95%);

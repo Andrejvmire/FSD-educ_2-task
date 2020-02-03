@@ -1,0 +1,8 @@
+mixin menu(items)
+
+    if items
+        ul.menu
+            each item in items
+                li.item
+                    span.item__text= item
+                    input.item__count
