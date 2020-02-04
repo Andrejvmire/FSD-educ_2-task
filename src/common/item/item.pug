@@ -1,0 +1,6 @@
+mixin item(text)
+    li.item
+        span.item__text= text
+        button.item__decrease.item__decrease-inactive -
+        input.item__count(value=0 type="number" min="0")
+        button.item__increase +
