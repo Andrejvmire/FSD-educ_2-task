@@ -1,16 +1,18 @@
 include ./src/common/logo/logo
 include src/common/input-group/input-group__text
 include src/common/input-group/input-group__drop-down
+include src/common/input-group/input-group__subscription
 
 doctype html
 html
     head
     body
         .card
-            h1 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, dolore laudantium magni maiores modi pariatur quaerat quam reiciendis velit vitae!
-            h2 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores deleniti doloremque hic magni nulla quia, quidem reiciendis reprehenderit similique ut.
-            h3 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium cum explicabo modi natus neque odit quidem, reiciendis voluptatem! Omnis, quaerat?
-            p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus amet aperiam asperiores deleniti ea enim excepturi expedita, maiores reprehenderit voluptates.
+            h1 Lorem ipsum dolor sit amet, consectetur
+            h2 Lorem ipsum dolor sit amet, consectetur
+            h3 Lorem ipsum dolor sit amet, consectetur
+            p Lorem ipsum dolor sit amet, consectetur
 
-            +input-group__text("Заголовок", "Placeholder", "email", "/d/d/w", "text")
+            +input-group__text("Заголовок", "Placeholder", "text", "text")
             +input-group__drop-down("Заголовок", "Placeholder", "Сколько гостей", ['test', 'test2', "test3"])
+            +input-group__subscription("Заголовок", "Placeholder", "email", "text")
