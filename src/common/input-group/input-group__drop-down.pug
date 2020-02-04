@@ -1,7 +1,7 @@
 mixin input-group__drop-down(title, placeholder, text, items)
     include ../menu/menu
     .input-group
-        label.input-group__title title
-        .input-group__drop-down(placeholder=placeholder)= text
-        .input-group__button keyboard_arrow_down
-        +menu(items)
+        label.input-group__title= title
+        .input-group__drop-down= text
+        .input-group__button expand_more
+        +menu(items, true)

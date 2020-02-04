@@ -31,6 +31,10 @@
     @extend .input-group__text;
   }
 
+  &__subscription {
+    @extend .input-group__text;
+  }
+
   // Используется шрифт Material Icons см https://material.io/resources/icons/
   &__button {
     position: absolute;
@@ -42,7 +46,13 @@
     cursor: pointer;
     font-family: "Material Icons";
     font-size: 24px;
-    line-height: 2;
+    line-height: 1.9;
     color: $dark50;
+
+    &-purple {
+      background: $primary_gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
   }
 }
