@@ -17,6 +17,9 @@
     "url": "https://github.com/Andrejvmire/FSD-educ_2-task/issues"
   },
   "homepage": "https://github.com/Andrejvmire/FSD-educ_2-task#readme",
+  "browserslist": [
+    "last 5 Chrome version or last 5 Firefox version"
+  ],
   "devDependencies": {
     "html-webpack-plugin": "^3.2.0",
     "pug": "^2.0.4",
@@ -32,9 +35,11 @@
     "style-loader": "^1.1.3"
   },
   "dependencies": {
+    "autoprefixer": "^9.7.4",
     "css-reset-and-normalize": "^2.1.0",
     "inputmask": "^5.0.3",
     "jquery": "^3.4.1",
-    "material-design-icons": "^3.0.1"
+    "material-design-icons": "^3.0.1",
+    "postcss-loader": "^3.0.0"
   }
 }

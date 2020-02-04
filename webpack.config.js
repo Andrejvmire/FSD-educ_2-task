@@ -1,19 +1,19 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Webpack = require('webpack');
-const JQuery = require('jquery');
 
 module.exports = {
     mode: "development",
     entry: {
+        app: path.join(__dirname, "index.js"),
         vendors: path.join(__dirname, "src", "vendors.js"),
     },
     output: {
-        filename: "index.js",
+        filename: "[name].js",
         path: path.resolve(__dirname, 'dist')
     },
     devServer: {
-        contentBase: "./www",
+        contentBase: "./dist",
         host: 'localhost'
     },
     module: {
@@ -32,6 +32,14 @@ module.exports = {
                         loader: 'style-loader',
                     }, {
                         loader: 'css-loader',
+                    },
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            plugins: () => ([
+                                require('autoprefixer')
+                            ])
+                        }
                     },
                     {
                         loader: 'sass-loader'
@@ -59,7 +67,8 @@ module.exports = {
             filename: path.join(__dirname, "dist", "index.html")
         }),
         new Webpack.ProvidePlugin({
-            $: JQuery
+            $: 'jquery',
+            JQuery: 'jquery'
         })
     ]
 };
