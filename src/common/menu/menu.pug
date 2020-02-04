@@ -1,8 +1,7 @@
-mixin menu(items)
+mixin menu(items, visible)
+    include ../item/item
 
     if items
         ul.menu
             each item in items
-                li.item
-                    span.item__text= item
-                    input.item__count
+                +item(item)
