@@ -1,6 +1,7 @@
-mixin item(text)
+mixin item(options)
+    - let {index, value} = options;
     li.item
-        span.item__text= text
+        span.item__text= value
         button.item__decrease.item__decrease-inactive -
-        input.item__count(value=0 type="number" min="0")
+        input.item__count(value=0 id=index type="number" min="0")
         button.item__increase +

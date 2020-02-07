@@ -1,5 +1,12 @@
-mixin input-group__subscription(title, placeholder, type, value)
+//-
+    options.title - текст в label'е
+    options.placeholder - placeholder
+    options.value - текст в input'е
+
+mixin input-group__subscription(options)
+    - const defaultOptions = {placeholder: '', value: ''};
+    - let {title, placeholder, value} = Object.assign(defaultOptions, options);
     .input-group
-        label.input-group__title=title
-        input.input-group__text(id=id, type=type, placeholder=placeholder, value=value)
-        .input-group__button.input-group__button-purple arrow_forward
+        label.input-group__title= title
+        input.input-group__text(type="email", placeholder= placeholder, value= value)
+        button.input-group__button.input-group__button-purple arrow_forward

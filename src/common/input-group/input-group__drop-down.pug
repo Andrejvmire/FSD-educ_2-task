@@ -1,7 +1,14 @@
-mixin input-group__drop-down(title, placeholder, text, items)
+//-
+    options.title - заголовок
+    options.placeholder - placeholder
+    options.items
+
+mixin input-group__drop-down(options)
+    - let defaultOptions = {placeholder: ""};
+    - let {title, placeholder, value, items} = Object.assign(defaultOptions, options, {items: Object(options.items)});
     include ../menu/menu
     .input-group
         label.input-group__title= title
-        .input-group__drop-down= text
+        .input-group__drop-down= placeholder
         .input-group__button expand_more
-        +menu(items, true)
+        +menu(items)

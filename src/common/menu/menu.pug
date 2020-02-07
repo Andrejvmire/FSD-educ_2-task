@@ -1,7 +1,7 @@
-mixin menu(items, visible)
+mixin menu(items)
     include ../item/item
 
     if items
         ul.menu
-            each item in items
-                +item(item)
+            each value, index in items
+                +item({index, value})
