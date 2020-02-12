@@ -1,0 +1,38 @@
+include ../../common/container/container
+include ../../common/page/page
+include ../../common/header/header__watermark
+include ../../common/logo/logo
+include ../../common/pallet/pallet
+
++container
+    +page
+        +header__watermark
+            .logo
+        .grid.grid__2-columns.grid__2-columns_gap_24
+            .grid.grid__list.grid__list_gap_20
+                +pallet({title: "Dark Shade 100%", hex: "#1F2041"})
+                +pallet({title: "Dark Shade 75%", hex: "#1F2041"})
+                    .pallet__color.pallet__color_dark75
+                +pallet({title: "Dark Shade 50%", hex: "#1F2041"})
+                    .pallet__color.pallet__color_dark50
+                +pallet({title: "Dark Shade 25%", hex: "#1F2041"})
+                    .pallet__color.pallet__color_dark25
+                +pallet({title: "Dark Shade 5%", hex: "#1F2041"})
+                    .pallet__color.pallet__color_dark05
+                +pallet({title: "Purple", hex: "#BC9CFF"})
+                    .pallet__color.pallet__color_purple
+                +pallet({title: "Green", hex: "#6FCF97"})
+                    .pallet__color.pallet__color_green
+            .grid.grid__list.grid__list_gap_50
+                .type
+                    .type__header.type__header_height_h1 H1
+                    .type__description.type__description_height_h1 This one is the sub-section or <br/> widget title
+                .type
+                    .type__header.type__header_height_h2 H2
+                    .type__description.type__description_height_h2 Next one is the item title inside <br/> widgets
+                .type
+                    .type__header.type__header_height_h3 H3
+                    .type__description.type__description_height_h3 This is a label or CTA text
+                .type
+                    .type__header.type__header_height_p body
+                    .type__description.type__description_height_p This is the body text which is used for most <br/> of the design, like paragraphs, lists, etc.

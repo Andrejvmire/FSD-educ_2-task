@@ -4,8 +4,14 @@
 
 @import "consts/type";
 
+@import "./src/common/container/container";
+@import "./src/common/page/page";
 @import "./src/common/logo/logo";
 @import "./src/common/input-group/input-group";
 @import "./src/common/card/card";
 @import "../common/menu/menu";
 @import "./src/common/item/item";
+@import "./src/common/header/header";
+@import "./src/common/grid/grid";
+@import "./src/common/pallet/pallet";
+@import "./src/common/type/type";

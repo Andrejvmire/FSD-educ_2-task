@@ -1,0 +1,28 @@
+.grid {
+  display: grid;
+
+  &__2-columns {
+    grid-template-columns: 1fr 1fr;
+
+    &_gap_24 {
+      grid-gap: 24%;
+    }
+  }
+
+  &__3-columns {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  &__list {
+    grid-auto-columns: auto;
+    align-content: baseline;
+
+    &_gap_20 {
+      grid-gap: 20px;
+    }
+
+    &_gap_50 {
+      grid-gap: 50px;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.page {
+    position: relative;
+    background-color: $white;
+
+    @media screen and (min-width: 1440px){
+        & {
+            margin: 0 auto;
+            width: 1440px;
+            padding: 143px 141px;
+        }
+    }
+}
+

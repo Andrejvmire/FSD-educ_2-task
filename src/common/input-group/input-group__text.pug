@@ -1,4 +1,14 @@
-mixin input-group__text(title, placeholder, type, value)
+//-
+    options.title - заголовок
+    options.placeholder - placeholder поля input
+    options.value - default текст в input
+    options.id - id
+
+mixin input-group__text(options)
+    - let defaultOptions = {placeholder: '', value: '', id: '', name: "input-group__text"};
+    - let {title, placeholder, value, id, name} = Object.assign(defaultOptions, options);
     .input-group
         label.input-group__title=title
-        input.input-group__text(type=type, placeholder=placeholder, value=value)
+        input.input-group__text(id=id name=name type="text", placeholder=placeholder, value=value)
+        if block
+            block

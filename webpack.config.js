@@ -1,16 +1,16 @@
-const path = require('path');
+const Path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const Webpack = require('webpack');
 
 module.exports = {
     mode: "development",
     entry: {
-        app: path.join(__dirname, "index.js"),
-        vendors: path.join(__dirname, "src", "vendors.js"),
+        app: Path.join(__dirname, "index.js"),
+        vendors: Path.join(__dirname, "src", "vendors.js"),
     },
     output: {
         filename: "[name].js",
-        path: path.resolve(__dirname, 'dist')
+        path: Path.resolve(__dirname, 'dist')
     },
     devServer: {
         contentBase: "./dist",
@@ -63,8 +63,16 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: path.join(__dirname, "index.pug"),
-            filename: path.join(__dirname, "dist", "index.html")
+            template: Path.join(__dirname, "index.pug"),
+            filename: Path.join(__dirname, "dist", "index.html")
+        }),
+        new HtmlWebpackPlugin({
+            template: Path.join(__dirname, "src", "pages", "ui-kit", "colors.pug"),
+            filename: Path.join(__dirname,"dist", "colors.html")
+        }),
+        new HtmlWebpackPlugin({
+            template: Path.join(__dirname, "src", "pages", "ui-kit", "form.pug"),
+            filename: Path.join(__dirname,"dist", "form.html")
         }),
         new Webpack.ProvidePlugin({
             $: 'jquery',

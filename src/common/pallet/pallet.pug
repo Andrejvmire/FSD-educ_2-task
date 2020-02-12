@@ -1,0 +1,13 @@
+//-
+    options.title
+    options.hex
+
+mixin pallet(options)
+    - const {title, hex} = options;
+    .pallet
+        if block
+            block
+        else
+            .pallet__color.pallet__color_dark
+        .pallet__title= title
+        .pallet__hex= hex

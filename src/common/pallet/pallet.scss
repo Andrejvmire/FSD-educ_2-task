@@ -1,0 +1,54 @@
+.pallet {
+  display: grid;
+  grid-template-areas: "color title"
+                      "color hex";
+  grid-template-columns: 70px 1fr;
+  grid-gap: 0 40px;
+
+  &__color {
+    grid-area: color;
+    height: 70px;
+    width: 70px;
+    border-radius: 6px;
+
+    &_dark {
+      background-color: $dark;
+
+      &75 {
+        background-color: $dark75;
+      }
+
+      &50 {
+        background-color: $dark50;
+      }
+
+      &25 {
+        background-color: $dark25;
+      }
+
+      &05 {
+        background-color: $dark05;
+      }
+    }
+
+    &_purple {
+      background-color: $purple;
+    }
+
+    &_green {
+      background-color: $green;
+    }
+  }
+
+  &__title {
+    @extend h2;
+    grid-area: title;
+    align-self: center;
+  }
+
+  &__hex {
+    font-size: 18px;
+    grid-area: hex;
+    align-self: center;
+  }
+}

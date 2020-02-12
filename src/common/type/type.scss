@@ -1,0 +1,36 @@
+.type {
+  display: grid;
+  grid-template-areas: "header description";
+  grid-template-columns: 25px 1fr;
+  grid-gap: 0 30px;
+
+  &__header {
+    grid-area: header;
+    justify-self: flex-end;
+    color: $dark25;
+  }
+
+  &__description {
+    grid-area: description;
+  }
+
+  &__header,
+  &__description {
+
+    &_height_h1 {
+      @extend h1;
+    }
+
+    &_height_h2 {
+      @extend h2;
+    }
+
+    &_height_h3 {
+      @extend h3;
+    }
+
+    &_height_p {
+      @extend body;
+    }
+  }
+}

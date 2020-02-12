@@ -4,6 +4,7 @@
 
   &__title {
     @extend h3;
+    line-height: 20px;
   }
 
   &__text {
@@ -12,7 +13,7 @@
     border: 1px solid $dark25;
     box-sizing: border-box;
     border-radius: 4px;
-    width: 100%;
+    width: 320px;
     padding: 13px 15px;
 
     &::placeholder {
@@ -48,6 +49,12 @@
     font-size: 24px;
     line-height: 1.9;
     color: $dark50;
+    border: none;
+
+    &:hover,
+    &:focus {
+      outline: none;
+    }
 
     &-purple {
       background: $primary_gradient;
