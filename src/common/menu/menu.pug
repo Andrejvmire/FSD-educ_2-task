@@ -1,7 +1,12 @@
-mixin menu(items)
+//-
+    options.items - массив
+
+mixin menu(options)
+    - let defaultOptions = {items: []};
+    - let {items} = Object.assign(defaultOptions, options)
     include ../item/item
 
-    if items
+    if items.length !== 0
         ul.menu
             each value, index in items
                 +item({index, value})

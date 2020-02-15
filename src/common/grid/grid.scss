@@ -7,10 +7,18 @@
     &_gap_24 {
       grid-gap: 24%;
     }
+
+    &_gap_20 {
+      grid-gap: 20px;
+    }
   }
 
   &__3-columns {
     grid-template-columns: 1fr 1fr 1fr;
+
+    &_gap_125 {
+      grid-gap: 125px;
+    }
   }
 
   &__list {

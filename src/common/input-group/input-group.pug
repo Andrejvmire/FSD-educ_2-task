@@ -1,0 +1,17 @@
+include ./input-group__text
+include ./input-group__subscription
+include ./input-group__masked-field
+include ./input-group__drop-down
+
+//-
+    options.title - заголовок
+    options.width - ширина блока
+
+mixin input-group(options)
+    - let defaultOptions = {placeholder: "", width: "full"};
+    - let {title, width} = Object.assign(defaultOptions, options);
+    include ../menu/menu
+    .input-group(class= `input-group_${width}`)
+        label.input-group__title= title
+        if block
+            block

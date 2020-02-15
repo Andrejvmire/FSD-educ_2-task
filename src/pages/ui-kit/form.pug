@@ -1,0 +1,58 @@
+include ../../common/container/container
+include ../../common/page/page
+include ../../common/header/header__watermark
+include ../../common/input-group/input-group
+
++container
+    +page
+        +header__watermark
+            .logo
+        .grid.grid__3-columns.grid__3-columns_gap_125
+            .grid.grid__list.grid__list_gap_20
+                +input-group({title: "Text field"})
+                    +input-group__text({
+                        placeholder: "Email"
+                    })
+                +input-group({title: "Text field"})
+                    +input-group__text({
+                        placeholder: "email",
+                        value: "This is pretty awesome"
+                    })
+                +input-group({title: "Drop down"})
+                    +input-group__drop-down({placeholder: "Сколько гостей"})
+                        +menu(items)
+                +input-group({title: "Masked text field"})
+                    +input-group__masked-field({placeholder: "ДД.ММ.ГГГГ"})
+                +input-group()
+                    .grid.grid__2-columns.grid__2-columns_gap_20
+                        +input-group({
+                            title: "Date dropdown",
+                            width: "half"
+                        })
+                            +input-group__drop-down({
+                                placeholder: "ДД.ММ.ГГГГ"
+                            })
+                        +input-group({
+                            title: "Date dropdown",
+                            width: "half"
+                        })
+                            +input-group__drop-down({
+                                placeholder: "ДД.ММ.ГГГГ",
+                                value: "19.08.2019"
+                            })
+                +input-group({
+                    title: "Filter date dropdown",
+                    width: "middle"
+                })
+                    +input-group__drop-down({value: "19 авг - 23 авг"})
+                +input-group({
+                    title: "Subscription text field",
+                    width: "middle"
+                })
+                    +input-group__subscription({
+                        placeholder: "Email",
+                    })
+            .grid.grid__list.grid__list_gap_20
+                +input-group({title: "Checkbox buttons"})
+                    input(type="checkbox")
+                    label test

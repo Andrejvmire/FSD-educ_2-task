@@ -6,7 +6,7 @@
     options.id
 
 mixin input-group__masked-field(options)
-    - let defaultOptions = {mask: "", id: ''};
-    - let {mask} = Object.assign(defaultOptions, options);
+    - let defaultOptions = {mask: "", id: '', width: "input-group_full"};
+    - let {mask, width} = Object.assign(defaultOptions, options);
     +input-group__text(options)
     

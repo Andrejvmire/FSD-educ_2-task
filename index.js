@@ -1,0 +1,1 @@
+import("style-loader!./src/style/style.scss");

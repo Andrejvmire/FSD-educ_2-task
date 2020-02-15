@@ -1,4 +1,4 @@
-h1 {
+%h1 {
   font-family: Quicksand, sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -7,7 +7,7 @@ h1 {
   color: $dark;
 }
 
-h2 {
+%h2 {
   font-family: Quicksand, sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -16,7 +16,7 @@ h2 {
   color: $dark;
 }
 
-h3 {
+%h3 {
   font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: bold;
@@ -26,7 +26,7 @@ h3 {
   color: $dark;
 }
 
-body {
+%body {
   font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: normal;

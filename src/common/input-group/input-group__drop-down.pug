@@ -1,14 +1,15 @@
+include ../menu/menu
+
 //-
-    options.title - заголовок
     options.placeholder - placeholder
     options.items
+    option.value
 
 mixin input-group__drop-down(options)
     - let defaultOptions = {placeholder: ""};
-    - let {title, placeholder, value, items} = Object.assign(defaultOptions, options, {items: Object(options.items)});
-    include ../menu/menu
-    .input-group
-        label.input-group__title= title
-        .input-group__drop-down= placeholder
+    - let {placeholder, value} = Object.assign(defaultOptions, options);
+    .input-group__drop-down
+        .input-group__drop-down_placeholder= value ? value : placeholder
         .input-group__button expand_more
-        +menu(items)
+        if block
+            block
