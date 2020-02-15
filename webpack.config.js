@@ -5,8 +5,8 @@ const Webpack = require('webpack');
 module.exports = {
     mode: "development",
     entry: {
-        app: Path.join(__dirname, "index.js"),
         vendors: Path.join(__dirname, "src", "vendors.js"),
+        app: Path.join(__dirname, "index.js"),
     },
     output: {
         filename: "[name].js",
