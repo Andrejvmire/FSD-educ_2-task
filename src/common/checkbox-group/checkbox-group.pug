@@ -1,0 +1,14 @@
+//-
+    options.title - заголовок
+    options.width - ширина блока
+
+mixin checkbox-group(options)
+    - let defaultOptions = {placeholder: "", width: "full"};
+    - let {title, width, comment} = Object.assign(defaultOptions, options);
+    include ../checkbox/checkbox
+    .checkbox-group(class= `checkbox-group_${width}`)
+        label.checkbox-group__title= title
+        label.checkbox-group__comment= comment
+        .checkbox-group__content
+            if block
+                block

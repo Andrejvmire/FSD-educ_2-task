@@ -1,0 +1,15 @@
+.checkbox {
+  display: grid;
+  grid-template-areas: "input label";
+  grid-template-columns: minmax(20px, min-content) 1fr;
+  grid-gap: 10px;
+
+  &__input {
+    grid-area: input;
+  }
+
+  &__label {
+    grid-area: label;
+    line-height: 18px;
+  }
+}

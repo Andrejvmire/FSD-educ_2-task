@@ -1,0 +1,14 @@
+//-
+    options.checked
+    options.label
+    options.type
+    options.value
+    options.name
+    options. className
+
+mixin checkbox(options)
+    - let defaultOptions = {checked: false, type: "checkbox"};
+    - let {checked, label, type, value, name, className, count} = Object.assign(defaultOptions, options);
+    .checkbox
+        input.checkbox__input(type= type checked= checked name= name value= value class= className data-like-count= count)
+        label.checkbox__label= label

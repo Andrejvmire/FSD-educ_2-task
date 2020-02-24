@@ -1,5 +1,6 @@
 mixin item(options)
-    - let {index, value} = options;
+    - let defaultOptions = {value: 0};
+    - let {index, value} = Object.assign(defaultOptions, options);
     li.item
         span.item__text= value
         button.item__decrease.item__decrease-inactive -

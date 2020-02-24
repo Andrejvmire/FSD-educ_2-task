@@ -9,9 +9,11 @@ include ./input-group__drop-down
 
 mixin input-group(options)
     - let defaultOptions = {placeholder: "", width: "full"};
-    - let {title, width} = Object.assign(defaultOptions, options);
+    - let {title, width, comment} = Object.assign(defaultOptions, options);
     include ../menu/menu
     .input-group(class= `input-group_${width}`)
         label.input-group__title= title
-        if block
-            block
+        label.input-group__comment= comment
+        .input-group__content
+            if block
+                block

@@ -1,21 +1,29 @@
 .input-group {
-  position: relative;
+  @extend %group;
+  grid-gap: 5px;
 
   &_full {
-    width: 320px;
+    @extend %group_full;
   }
 
   &_half {
-    width: 150px;
+    @extend %group_half;
   }
 
   &_middle {
-    width: 266px;
+    @extend %group_middle;
   }
 
   &__title {
-    @extend %h3;
-    line-height: 20px;
+    @extend %group__title;
+  }
+
+  &__comment {
+    @extend %group__comment;
+  }
+
+  &__content {
+    @extend %group__content;
   }
 
   &__text {

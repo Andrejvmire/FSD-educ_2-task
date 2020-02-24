@@ -1,0 +1,35 @@
+%group {
+  position: relative;
+  display: grid;
+  grid-template-areas: "title comment"
+  "content content";
+  grid-template-columns: minmax(min-content, 5fr) 1fr;
+
+  &_full {
+    width: 320px;
+  }
+
+  &_half {
+    width: 150px;
+  }
+
+  &_middle {
+    width: 266px;
+  }
+
+  &__title {
+    @extend %h3;
+    grid-area: title;
+  }
+
+  &__comment {
+    @extend %h3;
+    color: $dark25;
+    font-weight: normal;
+    grid-area: comment;
+  }
+
+  &__content {
+    grid-area: content;
+  }
+}

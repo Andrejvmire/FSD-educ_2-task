@@ -2,6 +2,9 @@ include ../../common/container/container
 include ../../common/page/page
 include ../../common/header/header__watermark
 include ../../common/input-group/input-group
+include ../../common/checkbox-group/checkbox-group
+include ../../common/checkbox/checkbox
+include ../../common/rate/rate
 
 +container
     +page
@@ -52,7 +55,45 @@ include ../../common/input-group/input-group
                     +input-group__subscription({
                         placeholder: "Email",
                     })
-            .grid.grid__list.grid__list_gap_20
-                +input-group({title: "Checkbox buttons"})
-                    input(type="checkbox")
-                    label test
+            .grid.grid__list.grid__list_gap_50
+                +checkbox-group({title: "Checkbox buttons"})
+                    .grid.grid__list.grid__list_gap_5
+                        +input-group
+                            +checkbox({label: "Можно курить"})
+                        +input-group
+                            +checkbox({label: "Можно с питомцами", checked: true})
+                        +input-group
+                            +checkbox({label: "Можно пригласить гостей (до 10 человек)", checked: true})
+                +checkbox-group({title: "Radio buttons", width: "middle"})
+                    .grid.grid__2-columns
+                        +checkbox({label: "Мужчина", type: "radio", name: "male", checked: true})
+                        +checkbox({label: "Женщина", type: "radio", name: "male"})
+                +checkbox-group({title: "Toggle"})
+                    .grid.grid__list.grid__list_gap_10
+                        +checkbox({
+                            label: "Получать спецпредложения",
+                            name: "toggle",
+                            checked: true,
+                            className: "switch"})
+                        +checkbox({
+                            label: "Получать спецпредложения",
+                            name: "toggle",
+                            className: "switch"
+                        })
+                +checkbox-group({title: "like button"})
+                    .grid.grid__auto_columns
+                        +checkbox({
+                            name: 'like',
+                            className: 'like',
+                            count: 2
+                        })
+                        +checkbox({
+                            name: 'like',
+                            checked: true,
+                            className: 'like',
+                            count: 12
+                        })
+                +checkbox-group({title: "rate button"})
+                    .grid.grid__2-columns
+                        +rate({stars: 4})
+                        +rate({stars: 5})
