@@ -5,6 +5,7 @@ include ../../common/input-group/input-group
 include ../../common/checkbox-group/checkbox-group
 include ../../common/checkbox/checkbox
 include ../../common/rate/rate
+include ../../common/range_slider/range_slider
 
 +container
     +page
@@ -97,3 +98,31 @@ include ../../common/rate/rate
                     .grid.grid__2-columns
                         +rate({stars: 4})
                         +rate({stars: 5})
+            .grid.grid__list.grid__list_gap_50
+                +checkbox-group({
+                    title: "Range slider",
+                    width: "middle",
+                    comment_id: "range_slider_comment"
+                })
+                    +range_slider({
+                        type: "double",
+                        id: "range_slider",
+                        min: 100,
+                        max: 20000,
+                        from: 5000,
+                        to: 10000,
+                        currency: "₽",
+                        comment_id: "range_slider_comment"
+                    })
+                +checkbox-group({
+                    title: "Buttons",
+                    width: "middle"
+                })
+                    .grid.grid__2-columns.grid__2-columns_gap_20
+                        button.button.button_type_filled.button_width_small click me
+                        button.button.button_type_filled.button_width_small.button_active click me
+                        button.button.button_width_small click me
+                        button.button.button_width_small.button_active click me
+                        a.button.button_width_small click me
+                        a.button.button_width_small.button_active click me
+                        button.button.button_width_big.button_type_filled.button__arrow-forward перейти к оплате

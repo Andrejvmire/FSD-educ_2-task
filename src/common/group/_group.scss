@@ -3,7 +3,7 @@
   display: grid;
   grid-template-areas: "title comment"
   "content content";
-  grid-template-columns: minmax(min-content, 5fr) 1fr;
+  grid-template-columns: 1fr minmax(0, max-content);
 
   &_full {
     width: 320px;

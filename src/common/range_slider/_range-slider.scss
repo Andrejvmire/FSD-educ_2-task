@@ -1,0 +1,22 @@
+.range-slider {
+  font-size: 8px;
+  border: 1px solid $dark25;
+  border-radius: 3px;
+
+  &__handle {
+    box-sizing: content-box;
+    font-size: 10px;
+    top: -.6em !important;
+    border: 2px solid $white;
+    border-radius: 10px;
+    background: $secondary_gradient;
+
+    &:focus {
+      outline: none !important;
+    }
+  }
+
+  &__range {
+    background: $secondary_gradient;
+  }
+}

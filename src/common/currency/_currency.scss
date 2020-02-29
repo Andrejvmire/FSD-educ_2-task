@@ -1,0 +1,16 @@
+.currency {
+  font: inherit;
+  color: inherit;
+  display: inline;
+
+  &:after {
+    content: '₽';
+  }
+
+  &:not(:first-child) {
+
+    &:before {
+      content: ' - ';
+    }
+  }
+}

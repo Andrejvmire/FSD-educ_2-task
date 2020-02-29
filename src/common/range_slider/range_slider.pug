@@ -1,0 +1,17 @@
+mixin range_slider(options)
+    - let defaultOptions = {className: "range-slider", type: "single", min: 0, max: 100, from: 0, to: 50, currency: "Р"};
+    - let {className, id, min, max, from, to, currency, comment_id} = Object.assign(defaultOptions, options);
+
+    div(
+        id= id
+        class= className
+        value=""
+        data-type= type
+        data-range= true
+        data-min= min
+        data-max= max
+        data-from= from
+        data-to= to
+        data-currency= currency
+        data-comment_id= comment_id
+    )

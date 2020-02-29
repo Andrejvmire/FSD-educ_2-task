@@ -9,5 +9,6 @@ $dark25: scale_color($dark, $alpha: -75%);
 $dark05: scale_color($dark, $alpha: -95%);
 
 $primary_gradient: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
+$secondary_gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 $primary_color: $purple;
 $secondary_color: $green;

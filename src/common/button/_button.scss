@@ -1,0 +1,57 @@
+.button:not(a) {
+  border: 2px solid $purple;
+}
+
+.button {
+  @extend %h3;
+  height: 44px;
+  border-radius: 22px;
+  background: $white;
+  color: $purple;
+
+  &:active,
+  &_active {
+    opacity: .5;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &__arrow-forward {
+    position: relative;
+
+    &:after {
+      font: {
+        family: "Material Icons";
+        style: normal;
+        weight: normal;
+      };
+      text-transform: none;
+      font-size: 24px;
+      line-height: 45px;
+      content: "arrow_forward";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 44px;
+      height: 44px;
+    }
+  }
+
+  &_type {
+    &_filled {
+      background: $primary_gradient;
+      color: $white;
+    }
+  }
+
+  &_width {
+    &_small {
+      width: 99px;
+    }
+    &_big {
+      width: 320px;
+    }
+  }
+}
