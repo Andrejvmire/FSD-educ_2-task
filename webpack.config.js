@@ -26,7 +26,7 @@ module.exports = {
                 }
             },
             {
-                test: /\.(sass|scss)$/,
+                test: /\.(sass|scss|css)$/,
                 use: [
                     {
                         loader: 'style-loader',
@@ -76,7 +76,9 @@ module.exports = {
         }),
         new Webpack.ProvidePlugin({
             $: 'jquery',
-            JQuery: 'jquery'
+            JQuery: 'jquery',
+            "window.jQuery": "jquery'",
+            "window.$": "jquery"
         })
     ]
 };
