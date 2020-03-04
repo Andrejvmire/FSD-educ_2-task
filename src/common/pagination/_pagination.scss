@@ -1,0 +1,63 @@
+.pagination {
+  display: grid;
+  grid-gap: 10px;
+
+  & a {
+    @extend h3;
+    text-transform: none;
+    font-weight: normal;
+    color: $dark50;
+    text-decoration: none;
+  }
+
+  &__list {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: min-content;
+  }
+
+  &-nav {
+    padding-left: 5px;
+  }
+
+  &-page,
+  &-ellipsis {
+    @extend %cell;
+  }
+
+  %cell {
+    display: grid;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-content: center;
+    border-radius: 50%;
+  }
+
+  &-prev,
+  &-next {
+    @extend %cell;
+    background: $secondary_gradient;
+    & a {
+      color: $white;
+      font: {
+        family: Material Icons;
+        style: normal;
+        weight: normal;
+        size: 24px;
+      };
+    }
+
+  }
+
+  &__item {
+
+    &_active {
+      background: $primary_gradient;
+
+      & a {
+        color: $white;
+      }
+    }
+  }
+}

@@ -6,6 +6,7 @@ include ../../common/checkbox-group/checkbox-group
 include ../../common/checkbox/checkbox
 include ../../common/rate/rate
 include ../../common/range_slider/range_slider
+include ../../common/pagination/pagination
 
 +container
     +page
@@ -125,4 +126,9 @@ include ../../common/range_slider/range_slider
                         button.button.button_width_small.button_active click me
                         a.button.button_width_small click me
                         a.button.button_width_small.button_active click me
-                        button.button.button_width_big.button_type_filled.button__arrow-forward перейти к оплате
+                    button.button.button_width_big.button_type_filled.button__arrow-forward перейти к оплате
+                +checkbox-group({
+                    title: "Pagination",
+                    width: "middle"
+                })
+                    +pagination({id: pagination})
