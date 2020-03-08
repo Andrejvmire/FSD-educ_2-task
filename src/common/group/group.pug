@@ -1,0 +1,9 @@
+mixin group(options)
+    - let defaultOptions = {};
+    - let {label, comment} = Object.assign(defaultOptions, options);
+    if block
+        .group
+            label.group__label= label
+            label.group__comment= comment
+            .group__content
+                block

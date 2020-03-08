@@ -1,0 +1,9 @@
+//-
+    options.placeholder - placeholder поля input
+    options.value - default текст в input
+    options.id - id
+
+mixin input__text(options)
+    - let defaultOptions = {placeholder: '', value: '', id: false, type: "text"};
+    - let {placeholder, value, id, name, type} = Object.assign(defaultOptions, options);
+    input.input__content(id=id name=name type= type, placeholder=placeholder, value=value)
