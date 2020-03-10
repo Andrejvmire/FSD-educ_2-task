@@ -1,0 +1,28 @@
+@if(&) {
+  &_gap {
+    &_5 {
+      grid-gap: 5px;
+    }
+    &_10 {
+      grid-gap: 10px;
+    }
+    &_24 {
+      grid-gap: 24%;
+    }
+    &_20 {
+      grid-gap: 20px;
+    }
+    &_25 {
+      grid-gap: 25px;
+    }
+    &_50 {
+      grid-gap: 50px;
+    }
+    &_100 {
+      grid-gap: 100px;
+    }
+    &_125 {
+      grid-gap: 125px;
+    }
+  }
+}

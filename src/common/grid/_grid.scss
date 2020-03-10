@@ -8,46 +8,17 @@
 
   &__2-columns {
     grid-template-columns: 1fr 1fr;
-
-    &_gap_24 {
-      grid-gap: 24%;
-    }
-
-    &_gap_20 {
-      grid-gap: 20px;
-    }
+    @import "./_gap/_gap";
   }
 
   &__3-columns {
-    grid-template-columns: 1fr 1fr 1fr;
-
-    &_gap_125 {
-      grid-gap: 125px;
-    }
+    grid-template-columns: 320px 1fr 1fr;
+    @import "./_gap/_gap";
   }
 
   &__list {
     grid-auto-columns: auto;
     align-content: baseline;
-
-    &_gap_5 {
-      grid-gap: 5px;
-    }
-
-    &_gap_10 {
-      grid-gap: 10px;
-    }
-
-    &_gap_20 {
-      grid-gap: 20px;
-    }
-
-    &_gap_50 {
-      grid-gap: 50px;
-    }
-
-    &_gap_100 {
-      grid-gap: 100px;
-    }
+    @import "./_gap/_gap";
   }
 }
