@@ -136,11 +136,12 @@ include ../../common/fieldset/fieldset
                         })
                             +range_slider({
                                 type: "double",
-                                id: "range_slider",
-                                min: 200,
-                                max: 15000,
-                                from: 5000,
-                                to: 10000,
+                                value: {
+                                    min: 200,
+                                    max: 15000,
+                                    from: 5000,
+                                    to: 10000
+                                },
                                 currency: "₽",
                                 comment_id: "range_slider_comment"
                             })
