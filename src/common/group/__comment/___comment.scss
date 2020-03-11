@@ -1,0 +1,8 @@
+@if (&) {
+  &__comment {
+    @extend %h3;
+    color: $dark25;
+    font-weight: normal;
+    grid-area: comment;
+  }
+}

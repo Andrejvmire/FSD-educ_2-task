@@ -1,0 +1,13 @@
+.block {
+  display: block;
+
+  &_width {
+    &_320 {
+      width: 320px;
+    }
+
+    &_266 {
+      width: 266px;
+    }
+  }
+}

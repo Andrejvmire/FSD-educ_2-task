@@ -1,0 +1,6 @@
+@if (&) {
+  &__label {
+    @extend %h3;
+    grid-area: title;
+  }
+}
