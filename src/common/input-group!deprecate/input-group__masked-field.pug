@@ -1,0 +1,12 @@
+//-
+    options.title
+    options.placeholder
+    options.mask
+    options.value
+    options.id
+
+mixin input-group__masked-field(options)
+    - let defaultOptions = {mask: "", id: ''};
+    - let {mask} = Object.assign(defaultOptions, options);
+    +input__text(options)
+    
