@@ -1,9 +1,10 @@
 .grid {
   display: grid;
 
-  &__auto_columns {
+  &__auto-columns {
     grid-auto-flow: column;
     grid-auto-columns: max-content;
+    @import "./_gap/_gap";
   }
 
   &__2-columns {

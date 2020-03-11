@@ -1,20 +1,4 @@
-include src/common/logo/logo
-include src/common/input-group/input-group__text
-include src/common/input-group/input-group__drop-down
-include src/common/input-group/input-group__subscription
-include src/common/input-group/input-group__masked-field
-
 doctype html
 html
     head
     body
-        .card
-            h1 Lorem ipsum dolor sit amet, consectetur
-            h2 Lorem ipsum dolor sit amet, consectetur
-            h3 Lorem ipsum dolor sit amet, consectetur
-            p Lorem ipsum dolor sit amet, consectetur
-
-            +input-group__text({title:"Заголовок", placeholder:"Placeholder", text:"text"})
-            +input-group__drop-down({title:"Заголовок", placeholder:"Placeholder", items: ["text"]})
-            +input-group__subscription({title: "Заголовок"})
-            +input-group__masked-field({title:"Masked", placeholder:"ДД.ММ.ГГ", value:"text", id: "masked-field_1"})

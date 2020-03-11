@@ -1,13 +1,14 @@
 require("webpack-jquery-ui/slider");
 require("jquery");
 import currency from "../currency/currency";
-
+//todo: переписать для подключения произвольного кол-ва
 const RangeSlider = options => {
     let {className, classes} = options;
     let dataset = $(className)[0].dataset;
+    //todo: передавать пределы и значения слайдера в объекте value. Приводить к числовому типу value.map(Number)!
     let min = dataset.min * 1;
     let max = dataset.max * 1;
-    let comment = $('#' + dataset.comment_id); // todo: знак рубля
+    let comment = $('#' + dataset.comment_id);
     let slider = $(className).slider({
         ...dataset,
         min,

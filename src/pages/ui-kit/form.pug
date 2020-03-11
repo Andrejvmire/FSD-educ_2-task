@@ -1,12 +1,13 @@
 include ../../common/container/container
 include ../../common/page/page
 include ../../common/header/header__watermark
-include ../../common/input-group/input-group
-include ../../common/checkbox-group/checkbox-group
+include ../../common/group/group
+include ../../common/input/input
 include ../../common/checkbox/checkbox
 include ../../common/rate/rate
 include ../../common/range_slider/range_slider
 include ../../common/pagination/pagination
+include ../../common/fieldset/fieldset
 
 +container
     +page
@@ -14,144 +15,177 @@ include ../../common/pagination/pagination
             .logo
         .grid.grid__list.grid__list_gap_100
             .grid.grid__3-columns.grid__3-columns_gap_125
-                .grid.grid__list.grid__list_gap_20
-                    +input-group({title: "Text field"})
-                        +input-group__text({
-                            placeholder: "Email"
+                .grid.grid__list.grid__list_gap_25
+                    +group({
+                        label: "Text field",
+                        comment: "default"
+                    })
+                        +input__text({
+                            placeholder: "Email",
                         })
-                    +input-group({title: "Text field"})
-                        +input-group__text({
+                    +group({
+                        label: "Text field"
+                    })
+                        +input__text({
                             placeholder: "email",
                             value: "This is pretty awesome"
                         })
-                    +input-group({title: "Drop down"})
-                        +input-group__drop-down({placeholder: "Сколько гостей"})
-                            +menu(items)
-                    +input-group({title: "Masked text field"})
-                        +input-group__masked-field({placeholder: "ДД.ММ.ГГГГ"})
-                    +input-group()
-                        .grid.grid__2-columns.grid__2-columns_gap_20
-                            +input-group({
-                                title: "Date dropdown",
-                                width: "half"
-                            })
-                                +input-group__drop-down({
-                                    placeholder: "ДД.ММ.ГГГГ"
-                                })
-                            +input-group({
-                                title: "Date dropdown",
-                                width: "half"
-                            })
-                                +input-group__drop-down({
-                                    placeholder: "ДД.ММ.ГГГГ",
-                                    value: "19.08.2019"
-                                })
-                    +input-group({
-                        title: "Filter date dropdown",
-                        width: "middle"
+                    +group({
+                        label: "Dropdown"
                     })
-                        +input-group__drop-down({value: "19 авг - 23 авг"})
-                    +input-group({
-                        title: "Subscription text field",
-                        width: "middle"
-                    })
-                        +input-group__subscription({
-                            placeholder: "Email",
+                        +fieldset__drop-down({
+                            value: "Сколько гостей"
                         })
-                .grid.grid__list.grid__list_gap_50
-                    +checkbox-group({title: "Checkbox buttons"})
-                        .grid.grid__list.grid__list_gap_5
-                            +input-group
+                    +group({
+                        label: "Masked text field"
+                    })
+                        +input__text_masked({
+                            placeholder: "ДД.ММ.ГГГГ",
+                            mask: '99.99.9999'
+                        })
+                    .grid.grid__2-columns.grid__2-columns_gap_20
+                        +group({
+                            label: "Date dropdown"
+                        })
+                            +fieldset__drop-down({
+                                placeholder: "ДД.ММ.ГГГГ",
+                            })
+                        +group({
+                            label: "Date dropdown"
+                        })
+                            +fieldset__drop-down({
+                                placeholder: "ДД.ММ.ГГГГ",
+                                value: "19.08.2019"
+                            })
+                    .block.block_width_266
+                        +group({
+                            label: "Filter date dropdown"
+                        })
+                            +fieldset__drop-down({
+                                value: "19 авг - 23 авг"
+                            })
+                    .block.block_width_266
+                        +group({
+                            label: "Subscription text field"
+                        })
+                            +input__text_subscription({
+                                placeholder: "Email",
+                            })
+                .block.block_width_266
+                    .grid.grid__list.grid__list_gap_50
+                        +group({
+                            label: "Checkbox buttons",
+                            className: ".grid.grid__list.grid__list_gap_15"
+                        })
+                            .grid.grid__list.grid__list_gap_10
                                 +checkbox({label: "Можно курить"})
-                            +input-group
                                 +checkbox({label: "Можно с питомцами", checked: true})
-                            +input-group
                                 +checkbox({label: "Можно пригласить гостей (до 10 человек)", checked: true})
-                    +checkbox-group({title: "Radio buttons", width: "middle"})
-                        .grid.grid__2-columns
-                            +checkbox({label: "Мужчина", type: "radio", name: "male", checked: true})
-                            +checkbox({label: "Женщина", type: "radio", name: "male"})
-                    +checkbox-group({title: "Toggle"})
-                        .grid.grid__list.grid__list_gap_10
-                            +checkbox({
-                                label: "Получать спецпредложения",
-                                name: "toggle",
-                                checked: true,
-                                className: "switch"})
-                            +checkbox({
-                                label: "Получать спецпредложения",
-                                name: "toggle",
-                                className: "switch"
-                            })
-                    +checkbox-group({title: "like button"})
-                        .grid.grid__auto_columns
-                            +checkbox({
-                                name: 'like',
-                                className: 'like',
-                                count: 2
-                            })
-                            +checkbox({
-                                name: 'like',
-                                checked: true,
-                                className: 'like',
-                                count: 12
-                            })
-                    +checkbox-group({title: "rate button"})
-                        .grid.grid__2-columns
-                            +rate({stars: 4})
-                            +rate({stars: 5})
-                .grid.grid__list.grid__list_gap_50
-                    +checkbox-group({
-                        title: "Range slider",
-                        width: "middle",
-                        comment_id: "range_slider_comment"
-                    })
-                        +range_slider({
-                            type: "double",
-                            id: "range_slider",
-                            min: 100,
-                            max: 20000,
-                            from: 5000,
-                            to: 10000,
-                            currency: "₽",
-                            comment_id: "range_slider_comment"
+                        +group({
+                            label: "Radio buttons",
+                            className: ".grid.grid__list.grid__list_gap_15"
                         })
-                    +checkbox-group({
-                        title: "Buttons",
-                        width: "middle"
+                            .grid.grid__2-columns
+                                +checkbox({label: "Мужчина", type: "radio", name: "male", checked: true})
+                                +checkbox({label: "Женщина", type: "radio", name: "male"})
+                        +group({
+                            label: "Toggle",
+                            className: ".grid.grid__list.grid__list_gap_15"
+                        })
+                            .grid.grid__list.grid__list_gap_10
+                                +checkbox({
+                                    label: "Получать спецпредложения",
+                                    name: "toggle",
+                                    checked: true,
+                                    className: "switch"
+                                })
+                                +checkbox({
+                                    label: "Получать спецпредложения",
+                                    name: "toggle",
+                                    className: "switch"
+                                })
+                        +group({
+                            label: "like button",
+                            className: ".gri.grid__list.grid__list_gap_15"
+                        })
+                            .grid.grid__auto-columns
+                                +checkbox({
+                                    name: 'like',
+                                    className: 'like',
+                                    count: 2
+                                })
+                                +checkbox({
+                                    name: 'like',
+                                    checked: true,
+                                    className: 'like',
+                                    count: 12
+                                })
+                        +group({
+                            label: "rate button",
+                            className: ".grid.grid__list.grid__list_gap_15"
+                        })
+                            .grid.grid__2-columns
+                                +rate({stars: 4})
+                                +rate({stars: 5})
+                .grid.grid__list.grid__list_gap_50
+                    .block.block_width_266
+                        +group({
+                            label: "Range slider",
+                            comment_id: "range_slider_comment",
+                            className: ".grid.grid__list.grid__list_gap_20"
+                        })
+                            +range_slider({
+                                type: "double",
+                                id: "range_slider",
+                                min: 200,
+                                max: 15000,
+                                from: 5000,
+                                to: 10000,
+                                currency: "₽",
+                                comment_id: "range_slider_comment"
+                            })
+
+                    +group({
+                        label: "Buttons",
+                        className: ".grid.grid__list.grid__list_gap_20"
                     })
-                        .grid.grid__2-columns.grid__2-columns_gap_20
-                            button.button.button_type_filled.button_width_small click me
-                            button.button.button_type_filled.button_width_small.button_active click me
-                            button.button.button_width_small click me
-                            button.button.button_width_small.button_active click me
-                            a.button.button_width_small click me
-                            a.button.button_width_small.button_active click me
-                        button.button.button_width_big.button_type_filled.button__arrow-forward перейти к оплате
-                    +checkbox-group({
-                        title: "Pagination",
-                        width: "middle"
-                    })
-                        +pagination({id: "pagination"})
+                        .block.block_width_266
+                            .grid.grid__list.grid__list_gap_20
+                                .grid.grid__auto-columns.grid__auto-columns_gap_20
+                                    button.button.button_type_filled.button_width_small click me
+                                    button.button.button_type_filled.button_width_small.button_active click me
+                                .grid.grid__auto-columns.grid__auto-columns_gap_20
+                                    button.button.button_width_small click me
+                                    button.button.button_width_small.button_active click me
+                                .grid.grid__auto-columns.grid__auto-columns_gap_20
+                                    a.button.button_width_small click me
+                                    a.button.button_width_small.button_active click me
+                            button.button.button_width_big.button_type_filled.button__arrow-forward перейти к оплате
+                    .block.block_width_266
+                        +group({
+                            label: "Pagination",
+                            className: ".grid.grid__list.grid__list_gap_20"
+                        })
+                            +pagination({id: "pagination"})
             .grid.grid__3-columns.grid__3-columns_gap_125
                 .grid.grid__list.grid__list_gap_20
-                    +input-group({
-                        title: "dropdown",
-                        width: "middle",
-                    })
-                        +input-group__drop-down({
-                            value: "2 спальни, 2 кровати, ..."
+                    .block.block_width_266
+                        +group({
+                            label: "dropdown"
                         })
-                    +input-group({
-                        title: "dropdown",
-                        width: "middle",
-                    })
-                        +input-group__drop-down({
-                            value: "2 спальни, 2 кровати, ..."
+                            +fieldset__drop-down({
+                                value: "2 спальни, 2 кровати, ..."
+                            })
+                    .block.block_width_266
+                        +group({
+                            label: "dropdown"
                         })
-                            - let items = [{name: "спальни", count: 2}, {name: "кровати", count: 2}, {name: "ванные комнаты", count: 0},];
-                            for item in items
-                                +item({
-                                    name: item.name,
-                                    count: item.count
-                                })
+                            +fieldset__drop-down({
+                                value: "2 спальни, 2 кровати, ..."
+                            })
+                                - let items = [{name: "спальни", count: 2}, {name: "кровати", count: 2}, {name: "ванные комнаты", count: 0},];
+                                for item in items
+                                    +menu({
+                                        name: item.name,
+                                        count: item.count
+                                    })

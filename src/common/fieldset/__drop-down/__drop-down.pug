@@ -1,0 +1,16 @@
+include ../../menu/menu
+
+//-
+    options.placeholder - placeholder
+    options.items
+    option.value
+
+mixin fieldset__drop-down(options)
+    - let defaultOptions = {disabled: true};
+    - let {value, mask, placeholder, disabled} = Object.assign(defaultOptions, options);
+    .fieldset.fieldset__drop-down
+        .fieldset__button expand_more
+        input.input__text_masked.fieldset__label(type="text" value=value data-mask= mask data-placeholder= placeholder disabled= disabled)
+        .fieldset__content.fieldset__content
+        if block
+            block

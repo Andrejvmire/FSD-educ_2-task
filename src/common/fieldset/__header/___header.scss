@@ -1,0 +1,7 @@
+@if (&) {
+  &__header {
+    display: grid;
+    grid-template-areas: "label button";
+    grid-template-columns: 1fr min-content;
+  }
+}

@@ -1,0 +1,6 @@
+@if (&) {
+  &__bordered {
+    @extend %input;
+    padding: 0 15px;
+  }
+}

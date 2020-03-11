@@ -1,9 +1,10 @@
 mixin group(options)
-    - let defaultOptions = {};
-    - let {label, comment} = Object.assign(defaultOptions, options);
+    - let defaultOptions = {className: "grid grid__list grid__list_gap_5"};
+    - let {label, comment, className, comment_id} = Object.assign(defaultOptions, options);
+        - className = className.split(".").join(' ');
     if block
-        .group
+        .group(class= className)
             label.group__label= label
-            label.group__comment= comment
+            label.group__comment(id= comment_id)= comment
             .group__content
                 block
