@@ -13,10 +13,12 @@ const fieldsetDropDown = ((options) => {
         let label = $(self.children('.' + labelClass));
         label.click(function () {
             content.toggleClass(contentClass + '_show');
+            label.toggleClass('fieldset__label_border_top')
             self.off('mouseout');
             self.on('mouseout', function (e) {
                 if (!$(this).find(e.relatedTarget).length) {
                     content.removeClass(contentClass + '_show');
+                    label.removeClass('fieldset__label_border_top');
                     self.off('mouseout');
                 }
             })

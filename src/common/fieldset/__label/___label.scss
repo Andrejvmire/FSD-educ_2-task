@@ -2,5 +2,11 @@
   &__label {
     align-self: center;
     cursor: pointer;
+
+    &_border_top {
+      @extend %input-hover;
+      border-bottom-left-radius: 0 !important;
+      border-bottom-right-radius: 0 !important;
+    }
   }
 }

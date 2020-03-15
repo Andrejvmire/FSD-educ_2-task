@@ -1,11 +1,7 @@
-.button:not(a) {
-  border: 2px solid $purple;
-}
-
 .button {
   @extend %h3;
-  height: 44px;
-  border-radius: 22px;
+  border: none;
+  padding: 0;
   background: $white;
   color: $purple;
 
@@ -43,6 +39,12 @@
     &_filled {
       background: $primary_gradient;
       color: $white;
+    }
+
+    &_bordered {
+      border: 2px solid $purple;
+      height: 44px;
+      border-radius: 22px;
     }
   }
 

@@ -153,15 +153,16 @@ include ../../common/fieldset/fieldset
                         .block.block_width_266
                             .grid.grid__list.grid__list_gap_20
                                 .grid.grid__auto-columns.grid__auto-columns_gap_20
-                                    button.button.button_type_filled.button_width_small click me
-                                    button.button.button_type_filled.button_width_small.button_active click me
+                                    button.button.button_type_filled.button_type_bordered.button_width_small click me
+                                    button.button.button_type_filled.button_type_bordered.button_width_small.button_active click me
                                 .grid.grid__auto-columns.grid__auto-columns_gap_20
-                                    button.button.button_width_small click me
-                                    button.button.button_width_small.button_active click me
+                                    button.button.button_type_bordered.button_width_small click me
+                                    button.button.button_type_bordered.button_width_small.button_active click me
                                 .grid.grid__auto-columns.grid__auto-columns_gap_20
                                     a.button.button_width_small click me
                                     a.button.button_width_small.button_active click me
-                            button.button.button_width_big.button_type_filled.button__arrow-forward перейти к оплате
+                                .grid.grid__auto-columns
+                                    button.button.button_width_big.button_type_bordered.button_type_filled.button__arrow-forward перейти к оплате
                     .block.block_width_266
                         +group({
                             label: "Pagination",
@@ -185,4 +186,22 @@ include ../../common/fieldset/fieldset
                             +fieldset__dropdown({
                                 value: "2 спальни, 2 кровати, ...",
                                 id: "bedroom2"
+                            })
+                .grid.grid__list
+                    .block.block_width_320
+                        +group({
+                            label: "dropdown"
+                        })
+                            +fieldset__dropdown({
+                                value: "Сколько гостей",
+                                id: "guests1"
+                            })
+                .grid.grid__list
+                    .block.block_width_320
+                        +group({
+                            label: "dropdown"
+                        })
+                            +fieldset__dropdown({
+                                value: "Сколько гостей",
+                                id: "guests2"
                             })

@@ -1,6 +1,6 @@
 import renderList from "../../../common/list/list";
 
-let response = (options) => ({
+let bedRoomResponse = (options) => ({
     response: [
         {
             name: "спальни", count: 2, id: 1
@@ -13,5 +13,22 @@ let response = (options) => ({
         }
     ]
 });
+renderList({id: 'bedroom2'}, bedRoomResponse());
 
-renderList({id: 'bedroom2'}, response());
+let guestsResponse = (options) => ({
+    response: [
+        {
+            name: "Взрослые"
+        },
+        {
+            name: "Дети"
+        },
+        {
+            name: "Младенцы"
+        }
+    ]
+});
+
+renderList({id: "guests1", buttons: true}, guestsResponse());
+
+renderList({id: "guests2", buttons: true, clearHide: false}, guestsResponse());

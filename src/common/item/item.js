@@ -1,4 +1,4 @@
-const renderItem = (data) => {
+const renderItem = (data) => { //todo: Добавить обработку событий changeCount для заголовка
     let defaultData = {count: 0};
     let {name, id, count} = Object.assign(defaultData, data);
     let li = $(document.createElement('li'));

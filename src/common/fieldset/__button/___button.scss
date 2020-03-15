@@ -1,18 +1,20 @@
 @if (&) {
-  // Используется шрифт Material Icons см https://material.io/resources/icons/
-
   &__button {
-    @extend %icon__button;
-    pointer-events: none;
+    @extend %h3;
 
-    &-purple {
-      background: $primary_gradient;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    &_confirm {
+      grid-area: confirm;
+      justify-self: end;
     }
 
-    & ~ input {
-      padding-right: 40px;
+    &_clear {
+      grid-area: clear;
+      color: $dark50;
+      justify-self: start;
+    }
+
+    &_hide {
+      display: none;
     }
   }
 }

@@ -1,0 +1,8 @@
+@if (&) {
+  &__control {
+    display: grid;
+    grid-template-areas: "clear confirm";
+    grid-template-columns: 1fr 1fr;
+    padding: 13px 7px 13px 15px;
+  }
+}
