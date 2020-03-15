@@ -1,0 +1,7 @@
+mixin fieldset__dropdown(options)
+    - let defaultOptions = {readonly: true};
+    - let {value, mask, placeholder, readonly, id} = Object.assign(defaultOptions, options);
+    .fieldset.fieldset__dropdown
+        .fieldset__button.fieldset__button_dropdown expand_more
+        input.input__text_masked.fieldset__label(type="text" value=value data-mask= mask data-placeholder= placeholder readonly= readonly)
+        .fieldset__content.fieldset__content(id= id)

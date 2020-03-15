@@ -1,0 +1,8 @@
+mixin list(options)
+    - let defaultOptions = {items: []};
+    - let {items} = Object.assign(defaultOptions, options)
+    include ../item/item
+
+    ul.list
+        each value, index in items
+            +item({index, value})

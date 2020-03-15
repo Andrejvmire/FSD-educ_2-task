@@ -3,6 +3,7 @@
 
   &__button {
     @extend %icon__button;
+    pointer-events: none;
 
     &-purple {
       background: $primary_gradient;
