@@ -2,7 +2,7 @@ require("webpack-jquery-ui/slider");
 require("jquery");
 import currency from "../currency/currency";
 
-const RangeSlider = options => {
+const rangeSlider = options => {
     let {className, classes} = options;
     $(className).each(function () {
         let dataset = $(this)[0].dataset;
@@ -24,7 +24,7 @@ const RangeSlider = options => {
     })
 }
 
-RangeSlider({
+rangeSlider({
     className: '.range-slider',
     classes: {
         "ui-slider": "range-slider",

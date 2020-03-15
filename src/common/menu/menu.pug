@@ -6,7 +6,6 @@ mixin menu(options)
     - let {items} = Object.assign(defaultOptions, options)
     include ../item/item
 
-    if items.length !== 0
-        ul.menu
-            each value, index in items
-                +item({index, value})
+    ul.menu
+        each value, index in items
+            +item({index, value})

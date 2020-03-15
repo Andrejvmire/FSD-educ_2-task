@@ -3,6 +3,13 @@
     @import "_show/_show";
 
     display: none;
+    position: absolute;
+    background: $white;
+    width: 100%;
+    border: 1px solid $dark50;
+    z-index: 1000;
+    top: 41px;
+    border-radius: 0 0 4px 4px;
   }
 
 
