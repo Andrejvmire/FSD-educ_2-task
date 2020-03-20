@@ -205,3 +205,16 @@ include ../../common/fieldset/fieldset
                                 value: "Сколько гостей",
                                 id: "guests2"
                             })
+            .grid.grid__3-columns.grid__3-columns_gap_125
+                .blocl.block_width_266
+                    .grid.grid__list.grid__list_gap_50
+                        +group()
+                            +checkbox-expandable({
+                                value: "Expandable checkbox list",
+                                id: "expand1"
+                            })
+                        +group()
+                            +checkbox-expandable({
+                                value: "Expandable checkbox list",
+                                id: "expand2"
+                            })

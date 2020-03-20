@@ -1,0 +1,7 @@
+mixin checkbox-expandable(options)
+    - let defaultOptions = {};
+    - let {value, id} = Object.assign(defaultOptions, options);
+    .fieldset.fieldset__expandable
+        .fieldset__icon.fieldset__icon_rotatable expand_more
+        .fieldset__title.fieldset__label= value
+        .fieldset__content(id= id)

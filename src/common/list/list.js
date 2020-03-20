@@ -1,14 +1,13 @@
-import renderItem from "../item/item";
 import fieldsetButtonRender from "../fieldset/__control/fieldsetControl";
 
-const renderList = (options, data) => {
-    let {id, buttons, clearHide} = options;
+const renderList = (options, data, items) => {
+    let {id, buttons} = options;
     let {response} = data;
     let container = $('#' + id);
     $(document.createElement('ul'))
         .addClass('list')
         .append(
-            response.map(renderItem)
+            response.map(items)
                 .map(item => item.render)
         )
         .appendTo(container);

@@ -1,4 +1,6 @@
 import renderList from "../../../common/list/list";
+import renderItem from "../../../common/item/item";
+import renderCheckbox from "../../../common/checkbox/renderCheckbox";
 
 let bedRoomResponse = (options) => ({
     response: [
@@ -13,7 +15,7 @@ let bedRoomResponse = (options) => ({
         }
     ]
 });
-renderList({id: 'bedroom2'}, bedRoomResponse());
+renderList({id: 'bedroom2'}, bedRoomResponse(), renderItem);
 
 let guestsResponse = (options) => ({
     response: [
@@ -29,6 +31,42 @@ let guestsResponse = (options) => ({
     ]
 });
 
-renderList({id: "guests1", buttons: true}, guestsResponse());
+renderList({id: "guests1", buttons: true}, guestsResponse(), renderItem);
 
-renderList({id: "guests2", buttons: true, clearHide: false}, guestsResponse());
+renderList({id: "guests2", buttons: true, clearHide: false}, guestsResponse(), renderItem);
+
+let checkbox_list = (options) => ({
+    response: [
+        {
+            label: "Завтрак"
+        },
+        {
+            label: "Письменый стол",
+            checked: true
+        },
+        {
+            label: "Стул для кормления",
+            checked: true
+        },
+        {
+            label: "Кроватка",
+            checked: true
+        },
+        {
+            label: "Телевизор"
+        },
+        {
+            label: "Шампунь"
+        },
+        {
+            label: "Телевизор"
+        },
+        {
+            label: "Шампунь"
+        },
+    ]
+})
+
+renderList({id: "expand1"}, checkbox_list(), renderCheckbox);
+
+renderList({id: "expand2"}, checkbox_list(), renderCheckbox);

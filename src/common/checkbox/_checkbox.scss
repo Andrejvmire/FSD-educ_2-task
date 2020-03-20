@@ -9,6 +9,7 @@
   }
 
   &__label {
+    @extend %body;
     grid-area: label;
     line-height: 18px;
   }

@@ -3,13 +3,18 @@
     @import "_show/_show";
 
     display: none;
-    position: absolute;
-    background: $white;
-    width: 100%;
-    border: 1px solid $dark50;
-    z-index: 1000;
-    top: 43px;
-    border-radius: 0 0 4px 4px;
+
+    &_with_border {
+      position: absolute;
+      background: $white;
+      width: 100%;
+      border: 1px solid $dark50;
+      z-index: 1000;
+      top: 43px;
+      border-radius: 0 0 4px 4px;
+      box-sizing: border-box;
+      padding: 7px 7px 7px 15px;
+    }
   }
 
 

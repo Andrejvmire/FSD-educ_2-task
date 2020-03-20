@@ -1,12 +1,4 @@
 .list {
   display: grid;
-  row-gap: 7px;
-  background: #FFFFFF;
-  box-sizing: border-box;
-  width: 100%;
-  padding: 7px 7px 7px 15px;
-
-  &-hide {
-    display: none;
-  }
+  row-gap: 10px;
 }
