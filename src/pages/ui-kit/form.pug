@@ -106,7 +106,7 @@ include ../../common/fieldset/fieldset
                                 })
                         +group({
                             label: "like button",
-                            className: ".gri.grid__list.grid__list_gap_15"
+                            className: ".grid.grid__list.grid__list_gap_15"
                         })
                             .grid.grid__auto-columns
                                 +checkbox({
@@ -218,3 +218,28 @@ include ../../common/fieldset/fieldset
                                 value: "Expandable checkbox list",
                                 id: "expand2"
                             })
+                .block.block_width_266
+                    .grid.grid__list
+                        +group({
+                            label: "rich checkbox buttons",
+                            className: ".grid.grid__list.grid__list_gap_15"
+                        })
+                            .grid.grid__list.grid__list_gap_15
+                                +checkbox({
+                                    label: "Широкий коридор",
+                                    subscription: "Ширина коридора в номере не менее 90 см."
+                                })
+                                +checkbox({
+                                    label: "Помощник для инвалидов",
+                                    subscription: "На 1 этаже вас встретит специалист и проводит до номера."
+                                })
+                .block.block_width_266
+                    .grid.grid__list
+                        +group({
+                            label: "bullet list",
+                            className: ".grid.grid__list.grid__list_gap_20"
+                        })
+                            ul.bullet-list.bullet-list__container
+                                li.bullet-list.bullet-list__item Нельзя с питомцами
+                                li.bullet-list.bullet-list__item Без вечеринок и мероприятий
+                                li.bullet-list.bullet-list__item Время прибытия - после 13:00, а выезд до 12:00

@@ -1,8 +1,8 @@
 .checkbox {
   display: grid;
-  grid-template-areas: "input label";
+  grid-template-areas: "input label" "null subscription";
   grid-template-columns: minmax(20px, min-content) 1fr;
-  grid-gap: 10px;
+  grid-column-gap: 10px;
 
   &__input {
     grid-area: input;
@@ -12,5 +12,16 @@
     @extend %body;
     grid-area: label;
     line-height: 18px;
+  }
+
+  &__title {
+    font-weight: bold;
+  }
+
+  &__subscription {
+    @extend %body;
+    font-size: 12px;
+    line-height: 14px;
+    grid-area: subscription;
   }
 }
