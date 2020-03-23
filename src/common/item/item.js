@@ -10,7 +10,7 @@ const renderItem = (data) => { //todo: Добавить обработку со�
     let render = (li => (
         li
             .empty()
-            .addClass('item')
+            .addClass('item item__dropdown')
             .append(
                 $(document.createElement('span'))
                     .addClass('item__text')

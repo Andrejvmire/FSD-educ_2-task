@@ -2,6 +2,7 @@
   // Используется шрифт Material Icons см https://material.io/resources/icons/
 
   &__icon {
+    @extend %icon;
     @extend %icon__button;
     pointer-events: none;
 

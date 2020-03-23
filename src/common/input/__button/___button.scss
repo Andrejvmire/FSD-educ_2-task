@@ -1,5 +1,6 @@
 @if (&) {
   &__button {
+    @extend %icon;
     @extend %icon__button;
 
     &-purple {

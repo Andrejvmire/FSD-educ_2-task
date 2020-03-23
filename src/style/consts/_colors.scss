@@ -6,6 +6,7 @@ $white: #FFFFFF;
 $dark75: scale_color($dark, $alpha: -25%);
 $dark50: scale_color($dark, $alpha: -50%);
 $dark25: scale_color($dark, $alpha: -75%);
+$dark10: scale_color($dark, $alpha: -90%);
 $dark05: scale_color($dark, $alpha: -95%);
 
 $primary_gradient: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);

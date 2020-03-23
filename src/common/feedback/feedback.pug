@@ -1,0 +1,17 @@
+//todo: Узнать почему require возвращает объект!!!
+mixin feedback(options)
+    - let {name, count, src, username, date, text} = options;
+    .feedback.feedback__container
+        .feedback.feedback__user
+            img.feedback.feedback__photo(src= src.default)
+            .feedback.feedback__username= username
+            .feedback.feedback__date= date
+        .feedback.feedback__comment
+            .feedback.feedback__like
+                +checkbox({
+                    checked: true,
+                    className: '.like',
+                    count,
+                    name
+                })
+            .feedback.feedback__text= text

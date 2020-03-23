@@ -1,13 +1,58 @@
 .item {
-  @extend %h3;
-  display: grid;
-  grid-template-areas: "text decrease count increase";
-  grid-template-columns: 1fr 30px 30px 30px;
-  grid-template-rows: repeat(auto-fit, 1fr);
-  align-items: center;
+  &__dropdown {
+    display: grid;
+    grid-template-areas: "text decrease count increase";
+    grid-template-columns: 1fr 30px 30px 30px;
+    align-items: center;
+  }
+
+  &__icon {
+    display: grid;
+    grid-template-areas: "icon text" "icon description" "delimeter delimeter";
+    grid-template-columns: min-content 1fr;
+    grid-column-gap: 10px;
+
+    &:before {
+      content: attr(data-image);
+      @extend %icon;
+      grid-area: icon;
+      font-size: 48px;
+    }
+
+    &:after {
+      content: '';
+      width: 100%;
+      height: 20px;
+      grid-area: delimeter;
+      border-bottom: 1px solid $dark10;
+    }
+
+    &_color {
+      &_purple {
+        color: $primary_color;
+      }
+    }
+  }
 
   &__text {
+    @extend %h3;
     grid-area: text;
+  }
+
+  &__title {
+    @extend %h3;
+    font-size: 14px;
+    text-transform: capitalize;
+    grid-area: text;
+    align-self: center;
+  }
+
+  &__description {
+    @extend %body;
+    grid-area: description;
+    color: $dark50;
+    align-self: center;
+
   }
 
   &__count {

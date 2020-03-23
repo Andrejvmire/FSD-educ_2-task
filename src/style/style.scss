@@ -13,7 +13,7 @@
 @import "./src/common/logo/logo";
 @import "./src/common/card/card";
 @import "../common/list/list";
-@import "./src/common/item/item";
+@import "../common/item/item";
 @import "./src/common/header/header";
 @import "../common/grid/grid";
 @import "./src/common/pallet/pallet";
@@ -27,4 +27,5 @@
 @import "./src/common/pagination/pagination";
 @import "./src/common/fieldset/fieldset";
 @import "./src/common/block/block";
-@import "./src/common/bullet-list/bullet-list";
+@import "../common/bullet/bullet";
+@import "../common/feedback/feedback";

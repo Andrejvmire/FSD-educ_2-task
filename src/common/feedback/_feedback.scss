@@ -1,0 +1,47 @@
+.feedback {
+  grid-column-gap: 10px;
+
+  &__container {
+    display: grid;
+    grid-gap: 10px;
+  }
+
+  &__user {
+    display: grid;
+    grid-template-areas: "photo username" "photo date";
+    grid-template-columns: min-content 1fr;
+  }
+
+  &__photo {
+    grid-area: photo;
+    border-radius: 50%;
+  }
+
+  &__username {
+    @extend %h3;
+    text-transform: capitalize;
+    font-size: 14px;
+    align-self: center;
+  }
+
+  &__date {
+    @extend %body;
+    align-self: center;
+  }
+
+  &__comment {
+    display: grid;
+    grid-template-areas: "like text" ". text";
+    grid-template-columns: max-content 1fr;
+    grid-template-rows: min-content 1fr;
+  }
+
+  &__like {
+    grid-area: like;
+  }
+
+  &__text {
+    grid-area: text;
+    line-height: 1.8;
+  }
+}

@@ -51,13 +51,18 @@ module.exports = {
                 use: {
                     loader: "file-loader",
                     options: {
-                        name: "images/[hash].[ext]"
+                        name: "img/[name].[ext]"
                     }
                 }
             },
             {
                 test: /\.(ttf|woff|svg|woff2|eot)$/,
-                loader: "file-loader"
+                use: {
+                    loader: "file-loader",
+                    options: {
+                        name: 'fonts/[name].[ext]'
+                    }
+                }
             }
         ]
     },

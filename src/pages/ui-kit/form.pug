@@ -8,6 +8,8 @@ include ../../common/rate/rate
 include ../../common/range_slider/range_slider
 include ../../common/pagination/pagination
 include ../../common/fieldset/fieldset
+include ../../common/list/list
+include ../../common/feedback/feedback
 
 +container
     +page
@@ -227,7 +229,7 @@ include ../../common/fieldset/fieldset
                             .grid.grid__list.grid__list_gap_15
                                 +checkbox({
                                     label: "Широкий коридор",
-                                    subscription: "Ширина коридора в номере не менее 90 см."
+                                    subscription: "Ширина коридора в номере не менее 91 см."
                                 })
                                 +checkbox({
                                     label: "Помощник для инвалидов",
@@ -239,7 +241,30 @@ include ../../common/fieldset/fieldset
                             label: "bullet list",
                             className: ".grid.grid__list.grid__list_gap_20"
                         })
-                            ul.bullet-list.bullet-list__container
-                                li.bullet-list.bullet-list__item Нельзя с питомцами
-                                li.bullet-list.bullet-list__item Без вечеринок и мероприятий
-                                li.bullet-list.bullet-list__item Время прибытия - после 13:00, а выезд до 12:00
+                            ul.list
+                                li.bullet.bullet__item Нельзя с питомцами
+                                li.bullet.bullet__item Без вечеринок и мероприятий
+                                li.bullet.bullet__item Время прибытия &mdash; после 13:00, а выезд до 12:00
+            .grid.grid__3-columns.grid__3-columns_gap_125
+                .block.block_width_280
+                    .grid.grid__list
+                        +group({})
+                            +list({className: ".grid.grid__list.grid__list_gap_20"})
+                                li.item.item__icon.item__icon_color_purple(data-image="insert_emoticon")
+                                    span.item__title Комфорт
+                                    span.item__description Шумопоглащающие стены
+                                li.item.item__icon.item__icon_color_purple(data-image="location_city")
+                                    span.item__title Удобство
+                                    span.item__description Окно в каждой из спален
+                .grid.grid_span_2
+                    +group()
+                        +feedback({
+                            name: 'feed_from_sarafan',
+                            count: 12,
+                            username: "Мурад Сарафанов",
+                            date: "5 дней назад",
+                            src: require("../../common/feedback/img/murad.png"),
+                            text: `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.
+                             И стены, действительно, шумоподавляющие.
+                             Выкрикивал комплименты повару &mdash; никто не жаловался из соседей`
+                        })

@@ -1,6 +1,8 @@
 .grid {
   display: grid;
 
+  @import "./_span/_span";
+
   &__auto-columns {
     grid-auto-flow: column;
     grid-auto-columns: max-content;

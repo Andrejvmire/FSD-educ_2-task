@@ -7,12 +7,13 @@
     options. className
 
 mixin checkbox(options)
-    - let defaultOptions = {checked: false, type: "checkbox"};
+    - let defaultOptions = {checked: false, type: "checkbox", className: ''};
     - let {checked, label, type, value, name, className, count, subscription} = Object.assign(defaultOptions, options);
+    - className = className.split('.').join(' ');
     .checkbox
         input.checkbox__input(type= type checked= checked name= name value= value class= className data-like-count= count)
         if subscription
             label.checkbox__label.checkbox__title= label
             label.checkbox__subscription= subscription
-        else
+        else if label
             label.checkbox__label= label

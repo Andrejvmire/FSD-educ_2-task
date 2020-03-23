@@ -1,6 +1,6 @@
 .checkbox {
   display: grid;
-  grid-template-areas: "input label" "null subscription";
+  grid-template-areas: "input label" ". subscription";
   grid-template-columns: minmax(20px, min-content) 1fr;
   grid-column-gap: 10px;
 

@@ -1,8 +1,8 @@
 mixin list(options)
     - let defaultOptions = {items: []};
-    - let {items} = Object.assign(defaultOptions, options)
-    include ../item/item
+    - let {items, className} = Object.assign(defaultOptions, options)
+    - className = className.split('.').join(' ');
 
-    ul.list
-        each value, index in items
-            +item({index, value})
+    ul.list(class= className)
+        if block
+            block

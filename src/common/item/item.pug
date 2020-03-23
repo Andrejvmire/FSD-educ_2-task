@@ -2,7 +2,7 @@ mixin item(options)
     - let defaultOptions = {count: 0};
     - let {index, name, count} = Object.assign(defaultOptions, options);
     - let inactive = count === 0 ? "item__decrease-inactive" : '';
-    li.item
+    li.item.item__dropdown
         span.item__text= name
         button.item__decrease(class= inactive) -
         input.item__count(value=count id=index type="number" min="0")

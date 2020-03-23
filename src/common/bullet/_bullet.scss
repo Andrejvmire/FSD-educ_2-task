@@ -1,0 +1,19 @@
+.bullet {
+  &__item {
+    @extend %body;
+    display: grid;
+    grid-template-columns: min-content minmax(min-content, 1fr);
+    grid-column-gap: 10px;
+    line-height: 1.7;
+  }
+
+  &:before {
+    content: '';
+    margin-top: .4em;
+    display: block;
+    width: 10.43px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: $dark25;
+  }
+}
