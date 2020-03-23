@@ -1,0 +1,22 @@
+include ../../common/container/container
+include ../../common/page/page
+include ../../common/header/header__watermark
+include ../../common/group/group
+include ../../common/input/input
+include ../../common/checkbox/checkbox
+include ../../common/rate/rate
+include ../../common/fieldset/fieldset
+include ../../common/list/list
+include ../../common/feedback/feedback
+include ../../components/room-filter-card
+
++container
+    +page
+        .header.header__watermark
+            .logo
+        .grid.grid__auto-columns.grid__auto-columns_gap_40
+            .block.block_width_380
+                +room-filter-card({
+                    title: "Найдём номера под ваши пожелания"
+                })
+            .card.block.block_width_380

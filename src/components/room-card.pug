@@ -1,0 +1,30 @@
+mixin room-card(options)
+    - let {title, type, price, date} = options;
+    - let {check_in, check_out} = date;
+    .card.room.room__card
+        .grid.grid__list.grid__list_gap_20
+            .room.room__header.grid
+                h1.room.room.title= title
+                .room.room__type= type
+                .room.room__price(data-price= price)
+            .room.room__options.grid.grid__list.grid__list_gap_20
+                .grid.grid__2-columns.grid__2-columns_gap_20
+                    +group({
+                        value: 'Прибытие'
+                    })
+                        +fieldset__dropdown({
+                            value: check_in
+                        })
+                    +group({
+                        value: 'Выезд'
+                    })
+                        +fieldset__dropdown({
+                            value: check_out
+                        })
+                +group({
+                    value: 'Гости'
+                })
+                    +fieldset__dropdown({
+                        value: '3 гостя'
+                    })
+            .room.room__subtotal.grid.grid__list.grid__list_gap_20
