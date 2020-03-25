@@ -3,14 +3,18 @@
   color: inherit;
   display: inline;
 
-  &:after {
-    content: '₽';
+  &__ru {
+    &:after {
+      content: '₽';
+    }
   }
 
-  &:not(:first-child) {
+  &__range {
+    &:not(:first-child) {
 
-    &:before {
-      content: ' - ';
+      &:before {
+        content: ' - ';
+      }
     }
   }
 }

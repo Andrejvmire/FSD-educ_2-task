@@ -2,8 +2,8 @@
 @import "./consts/templates";
 @import "font-faces";
 @import "../../node_modules/material-design-icons/iconfont/material-icons.css";
-@import "../common/input/input";
-@import "../common/icon/icon";
+@import "./src/common/input/input";
+@import "./src/common/icon/icon";
 
 @import "consts/type";
 
@@ -12,20 +12,22 @@
 @import "./src/common/page/page";
 @import "./src/common/logo/logo";
 @import "./src/common/card/card";
-@import "../common/list/list";
-@import "../common/item/item";
+@import "./src/common/list/list";
+@import "./src/common/item/item";
 @import "./src/common/header/header";
-@import "../common/grid/grid";
+@import "./src/common/grid/grid";
 @import "./src/common/pallet/pallet";
 @import "./src/common/type/type";
 @import "./src/common/checkbox/checkbox";
 @import "./src/common/rate/rate";
 @import "./src/common/star/star";
 @import "./src/common/range_slider/range-slider";
-@import "../common/currency/currency";
+@import "./src/common/currency/currency";
 @import "./src/common/button/button";
 @import "./src/common/pagination/pagination";
 @import "./src/common/fieldset/fieldset";
 @import "./src/common/block/block";
-@import "../common/bullet/bullet";
-@import "../common/feedback/feedback";
+@import "./src/common/bullet/bullet";
+@import "./src/common/feedback/feedback";
+@import "./src/common/number/number";
+@import "./src/common/room/room";

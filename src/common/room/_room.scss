@@ -1,0 +1,100 @@
+.room {
+  &__header {
+    grid-template-areas: "number type price";
+    grid-template-columns: max-content 1fr max-content;
+    grid-column-gap: 10px;
+    align-items: baseline;
+  }
+
+  &__number {
+    grid-area: number;
+  }
+
+  &__type {
+    @extend %h3;
+    grid-area: type;
+    color: $primary_color;
+  }
+
+  &__price {
+    @extend %body;
+    grid-area: price;
+    color: $dark50;
+    font-weight: bold;
+  }
+
+  &__downsize {
+    font: {
+      weight: normal;
+      size: 12px;
+    };
+  }
+
+  &__multiplicity {
+    display: grid;
+    grid-column-gap: 5px;
+    grid-template-columns: max-content max-content;
+  }
+
+  &__item {
+    grid-template-areas: "fieldname info subtotal";
+    grid-template-columns: 215px max-content 1fr;
+    grid-gap: 5px;
+  }
+
+  &__fieldname {
+    @extend %body;
+    color: $dark50;
+    font-size: 14px;
+    grid-area: fieldname;
+  }
+
+  &__info {
+    grid-area: info;
+    position: relative;
+    bottom: 4px;
+
+    &:after {
+      content: 'i';
+      @extend %h3;
+      text-transform: none;
+      display: grid;
+      width: 20px;
+      height: 20px;
+      border: 1px solid $dark25;
+      color: $dark25;
+      border-radius: 50%;
+      padding: 4px 7px;
+    }
+  }
+
+  &__subtotal {
+    grid-area: subtotal;
+    justify-self: end;
+  }
+
+  &__total {
+    @extend %h2;
+    line-height: 24px;
+    grid-template-areas: "title total";
+    grid-template-columns: 1fr max-content;
+    grid-gap: 5px;
+  }
+
+  &__total-title {
+    grid-area: title;
+    font-size: 21px;
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    grid-gap: 5px;
+
+    &:after {
+      content: '';
+      border-bottom: 1px dashed $dark25;
+    }
+  }
+
+  &__total-price {
+    grid-area: total;
+  }
+}
