@@ -5,5 +5,6 @@ import("./src/common/pagination/pagination");
 import("./src/common/input/__text/_masked/_masked")
 import("./src/common/fieldset/fieldset");
 import("./src/common/list/list");
+import("./src/common/datepicker/datepicker");
 
 import("./src/pages/ui-kit/js/form");
