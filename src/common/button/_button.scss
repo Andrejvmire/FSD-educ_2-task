@@ -1,9 +1,13 @@
 .button {
   @extend %h3;
+  display: grid;
+  align-items: center;
+  justify-items: center;
   border: none;
   padding: 0;
   background: $white;
   color: $purple;
+  cursor: pointer;
 
   &:active,
   &_active {

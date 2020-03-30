@@ -53,6 +53,10 @@
     &.-selected- {
       background: inherit;
 
+      &.-current- {
+        background: inherit;
+      }
+
       &.-focus- {
         background: inherit;
       }
@@ -95,6 +99,11 @@
 
         &.-focus- {
           background-color: $primary_color50;
+        }
+
+        &.-current- {
+          background: inherit;
+          border-radius: inherit;
         }
       }
 

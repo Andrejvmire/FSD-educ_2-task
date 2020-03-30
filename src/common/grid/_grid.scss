@@ -2,6 +2,7 @@
   display: grid;
 
   @import "./_span/_span";
+  @import "./_align/_align";
 
   &__auto-columns {
     grid-auto-flow: column;

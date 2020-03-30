@@ -3,8 +3,6 @@ import datepicker from 'air-datepicker';
 let calendar = $('.datepicker-container').datepicker({
     classes: "block block_width_320",
     offset: 0,
-    startDate: new Date(2019, 7, 1),
-    inline: true,
     multipleDateSeparator: ' - ',
     range: true,
     navTitles: {

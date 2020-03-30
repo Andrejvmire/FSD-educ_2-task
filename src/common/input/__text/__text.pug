@@ -4,6 +4,6 @@
     options.id - id
 
 mixin input__text(options)
-    - let defaultOptions = {placeholder: '', value: '', id: false, type: "text"};
-    - let {placeholder, value, id, name, type} = Object.assign(defaultOptions, options);
-    input(id=id name=name type= type, placeholder=placeholder, value=value)
+    - let defaultOptions = {placeholder: '', value: '', id: false, type: "text", required: true};
+    - let {placeholder, value, id, name, type, required} = Object.assign(defaultOptions, options);
+    input(id=id name=name type= type, placeholder=placeholder, value=value, required= required)

@@ -1,4 +1,4 @@
 mixin input__text_masked(options)
-    - let defaultOptions = {placeholder: '', value: '', id: false, type: "text"};
-    - let {placeholder, value, id, name, type, mask} = Object.assign(defaultOptions, options);
-    input.input__text.input__text_masked(id= id name=name type= type, data-placeholder=placeholder, value=value, data-mask= mask)
+    - let defaultOptions = {placeholder: '', value: '', id: false, type: "text", required: true};
+    - let {placeholder, value, id, name, type, mask, className, range, required} = Object.assign(defaultOptions, options);
+    input.input__text.input__text_masked(id= id class= className name=name type= type data-placeholder=placeholder value=value data-mask= mask required= required data-range= range)
