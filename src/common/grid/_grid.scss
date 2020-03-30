@@ -3,6 +3,7 @@
 
   @import "./_span/_span";
   @import "./_align/_align";
+  @import "./_justify/_justify";
 
   &__auto-columns {
     grid-auto-flow: column;

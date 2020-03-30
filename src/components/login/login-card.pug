@@ -1,0 +1,24 @@
+mixin login-card(options)
+    - let defaultOptions = {};
+    - let {} = Object.assign(defaultOptions, options);
+
+    form.card
+        .grid.grid__list.grid__list_gap_20
+            h1 Войти
+            +group({
+                className: 'grid'
+            })
+            .grid.grid__list.grid__list_gap_10
+                +input__text({
+                    placeholder: "Логин",
+                    name: 'login'
+                })
+                +input__text({
+                    placeholder: 'Пароль',
+                    name: 'password'
+                })
+            .grid.grid__list.grid__list_gap_30
+                button.button.button_width_big.button_type_bordered.button_type_filled.button__arrow-forward перейти к оплате
+                .grid.grid__auto-columns.grid_align_center.grid_justify_space-between
+                    label Нет аккаунта на Toxin?
+                    a.button.button_type_bordered.button_width_small Создать
