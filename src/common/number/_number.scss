@@ -1,0 +1,7 @@
+.number {
+  &:before {
+    content: '№';
+    display: inline;
+    font-size: 14px;
+  }
+}

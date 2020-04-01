@@ -13,3 +13,5 @@ $primary_gradient: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
 $secondary_gradient: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 $primary_color: $purple;
 $secondary_color: $green;
+
+$primary_color50: scale_color($primary_color, $alpha: -50%)

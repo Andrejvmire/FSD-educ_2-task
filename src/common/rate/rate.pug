@@ -4,9 +4,6 @@
     options.count
 
 mixin rate(options)
-    - let defaultOptions = {stars: 0, count: 5}
-    - let { id, stars, count } = Object.assign(defaultOptions, options);
-    - let i = 0;
-    .rate(id= id)
-        while i < count
-            span.star(class= i++ < stars ? 'star__filled': 'star__bordered')
+    - let defaultOptions = {stars: 0}
+    - let { id, stars } = Object.assign(defaultOptions, options);
+    .rate(id= id data-stars= stars)

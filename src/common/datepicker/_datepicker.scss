@@ -1,0 +1,138 @@
+.datepicker {
+  --padding: 15px;
+  --size: 40px;
+  background-color: $white;
+  border: 1px solid rgba(31, 32, 65, 0.25);
+  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+  border-radius: 4px;
+
+  @mixin cell {
+    width: var(--size, 40px);
+    height: var(--size, 40px);
+  }
+
+  &--nav {
+    padding: var(--padding, 4px);
+    border-bottom: none;
+
+    &-title {
+      @extend %h2;
+    }
+  }
+
+  &__arrow {
+    @extend %icon;
+    color: $primary_color;
+    font-size: 24px;
+  }
+
+  &--content {
+    @extend %body;
+    font-size: 12px;
+    line-height: 15px;
+    padding: 10px 20px;
+  }
+
+  &--days {
+    &-names {
+      margin: 0;
+    }
+  }
+
+  &--day {
+    &-name {
+      @include cell;
+      text-transform: capitalize;
+      font-size: 12px;
+      color: $primary_color;
+      font-weight: bold;
+    }
+  }
+
+  &--cell {
+    &.-selected- {
+      background: inherit;
+
+      &.-current- {
+        background: inherit;
+      }
+
+      &.-focus- {
+        background: inherit;
+      }
+    }
+
+    &-day {
+      @include cell;
+      color: $dark50;
+
+      &.-current- {
+        border-radius: 50%;
+        background: $secondary_gradient;
+        color: $white;
+      }
+
+      &.-range-to- {
+        border-radius: 0 50% 50% 0;
+      }
+
+      &.-range-from- {
+        border-radius: 50% 0 0 50%; //todo: поправить border
+      }
+
+      &.-range-from-,
+      &.-range-to- {
+        border: none;
+        background-color: $primary_color50;
+        position: relative;
+        z-index: 1;
+
+        &.-focus- {
+          background-color: $primary_color50;
+          border: none;
+        }
+      }
+
+      &.-in-range- {
+        background-color: $primary_color50;
+        color: $dark50;
+
+        &.-focus- {
+          background-color: $primary_color50;
+        }
+
+        &.-current- {
+          background: inherit;
+          border-radius: inherit;
+        }
+      }
+
+      &.-focus- {
+        background-color: inherit;
+      }
+
+      &.-selected- {
+        &:before {
+          content: '';
+          position: absolute;
+          border-radius: 50%;
+          @include cell;
+          background: $primary_color;
+          z-index: -1;
+        }
+      }
+
+      &.-other-month- {
+        color: $dark25;
+      }
+    }
+  }
+
+  &--buttons {
+    border: none;
+  }
+
+  &--button {
+    @extend .button;
+  }
+}

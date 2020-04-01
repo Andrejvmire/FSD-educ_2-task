@@ -1,0 +1,26 @@
+mixin room-filter-card(options)
+    - let {title} = options;
+    form.card
+        .grid.grid__list.grid__list_gap_20
+            h1= title
+            .grid.grid__2-columns.grid__2-columns_gap_25
+                +group({
+                    label: "Прибытие"
+                })
+                    +fieldset__dropdown({
+                        placeholder: "ДД.ММ.ГГГГ"
+                    })
+                +group({
+                    label: "Выезд"
+                })
+                    +fieldset__dropdown({
+                        placeholder: "ДД.ММ.ГГГГ"
+                    })
+            +group({
+                label: "Гости"
+            })
+                +fieldset__dropdown({
+                    value: "Сколько гостей"
+                })
+            +group({})
+                button.button.button_width_big.button_type_bordered.button_type_filled.button__arrow-forward подобрать номер

@@ -47,7 +47,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|jpe?g|img|svg)$/,
+                test: /\.(png|jpe?g|img|svg|gif)$/,
                 use: {
                     loader: "file-loader",
                     options: {
@@ -73,11 +73,15 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template: Path.join(__dirname, "src", "pages", "ui-kit", "colors.pug"),
-            filename: Path.join(__dirname,"dist", "colors.html")
+            filename: Path.join(__dirname, "dist", "colors.html")
         }),
         new HtmlWebpackPlugin({
             template: Path.join(__dirname, "src", "pages", "ui-kit", "form.pug"),
-            filename: Path.join(__dirname,"dist", "form.html")
+            filename: Path.join(__dirname, "dist", "form.html")
+        }),
+        new HtmlWebpackPlugin({
+            template: Path.join(__dirname, "src", "pages", "ui-kit", "cards.pug"),
+            filename: Path.join(__dirname, "dist", "cards.html")
         }),
         new Webpack.ProvidePlugin({
             $: 'jquery',

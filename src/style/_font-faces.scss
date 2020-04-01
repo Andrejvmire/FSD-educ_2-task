@@ -6,6 +6,16 @@
   font-style: normal;
 }
 
+//Open sans
+@font-face {
+  font: {
+    family: 'OpenSans';
+    weight: bold;
+    style: normal;
+  }
+  src: url("../fonts/OpenSans-Bold.ttf") format('truetype');
+}
+
 //Montserrat-Bold
 @font-face {
   font-family: 'Montserrat';

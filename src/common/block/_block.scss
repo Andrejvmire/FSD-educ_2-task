@@ -2,12 +2,20 @@
   display: block;
 
   &_width {
+    &_380 {
+      width: 380px;
+    }
+
     &_320 {
       width: 320px;
     }
 
     &_280 {
       width: 280px;
+    }
+
+    &_270 {
+      width: 270px;
     }
 
     &_266 {

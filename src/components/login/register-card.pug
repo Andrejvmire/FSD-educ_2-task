@@ -1,0 +1,53 @@
+mixin register-card(options)
+    - let defaultOptions = {};
+    - let {title} = Object.assign(defaultOptions, options);
+
+    form.card
+        .grid.grid__list.grid__list_gap_20
+            h1= title
+            +group({
+                className: ".grid"
+            })
+                .grid.grid__list.grid__list_gap_10
+                    +input__text({
+                        placeholder: "Имя",
+                        name: "name"
+                    })
+                    +input__text({
+                        placeholder: "Фамилия",
+                        name: "surname"
+                    })
+                    .grid.grid__auto-columns.grid__auto-columns_gap_20
+                        +checkbox({label: "Мужчина", type: "radio", name: "gender", checked: true, value: "male"})
+                        +checkbox({label: "Женщина", type: "radio", name: "gender", value: "female"})
+            +group({
+                label: "Дата рождения"
+            })
+                +input__text_masked({
+                    placeholder: "ДД.ММ.ГГГГ",
+                    className: "datepicker-container",
+                    name: "bdate",
+                    range: 0
+                })
+            +group({
+                label: "Данные для входа в сервис"
+            })
+                .grid.grid__list.grid__list_gap_10
+                    +input__text({
+                        placeholder: "Логин",
+                        name: "login"
+                    })
+                    +input__text({
+                        placeholder: "Пароль",
+                        name: "password"
+                    })
+                    +checkbox({
+                        className: "switch",
+                        label: "Получать спецпредложения",
+                        name: "subscription"
+                    })
+            .grid.grid__list.grid__list_gap_30
+                button.button.button_width_big.button_type_bordered.button_type_filled.button__arrow-forward перейти к оплате
+                .grid.grid__auto-columns.grid_justify_space-between.grid_align_center
+                    label Уже есть аккаунт на Toxin
+                    a.button.button_type_bordered.button_width_small Войти

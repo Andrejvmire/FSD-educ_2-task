@@ -1,6 +1,6 @@
 .card {
   $border-width: 1px;
-  $width: 380px + $border-width*2;
+  $width: 100%;
 
   display: block;
   width: $width;
@@ -10,4 +10,8 @@
   box-sizing: border-box;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
+  &_padding_no {
+    padding: 0;
+  }
 }

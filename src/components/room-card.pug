@@ -1,0 +1,58 @@
+mixin room-card(options)
+    - let {number, type, price, date} = options;
+    - let {check_in, check_out} = date;
+    form.card.room.room__card.grid.grid__list.grid__list_gap_20
+        .room.room__header.grid
+            h1.room.room__number.number= number
+            .room.room__type= type
+            .room.room__price
+                span.room.room__multiplicity
+                    span.currency.currency__ru(data-price= price) 9 990
+                    span.room.room__downsize в сутки
+        .room.room__options.grid.grid__list.grid__list_gap_20
+            .grid.grid__2-columns.grid__2-columns_gap_20
+                +group({
+                    label: 'Прибытие',
+                    className: ".grid.grid__list.grid__list_gap_6"
+                })
+                    +fieldset__dropdown({
+                        value: check_in
+                    })
+                +group({
+                    label: 'Выезд',
+                    className: ".grid.grid__list.grid__list_gap_6"
+                })
+                    +fieldset__dropdown({
+                        value: check_out
+                    })
+            +group({
+                label: 'Гости',
+                className: ".grid.grid__list.grid__list_gap_6"
+            })
+                +fieldset__dropdown({
+                    value: '3 гостя'
+                })
+        ul.room.grid.grid__list.grid__list_gap_20
+            li.room.room__item.grid
+                .room.room__fieldname.grid
+                    span.room.room__multiplicity
+                        span.currency.currency__ru(data-price= price) 9 990
+                        .
+                            x 4 суток
+                .room.room__subtotal.currency.currency__ru(data-subtotal= 39960) 39 960
+            li.room.room__item.grid
+                .room.room__fieldname.grid
+                    .room.room__service-charge Сбор за услуги: скидка 2 179₽
+                .room.room__info.info(data-info= "Some info")
+                .room.room__subtotal.currency.currency__ru(data-subtotal= 0) 0
+            li.room.room__item.grid
+                .room.room__fieldname.grid
+                    .room.room__service-charge Сбор за дополнительные услуги
+                .room.room__info.info(data-info= "Some info")
+                .room.room__subtotal.currency.currency__ru(data-subtotal= 300) 300
+        +group()
+            .room.room__total.grid
+                .room.room__total-title Итого
+                .room.room__total-price.currency.currency__ru(data-total= 38081) 38 081
+        .room.room__action
+            button.button.button_width_big.button_type_bordered.button_type_filled.button__arrow-forward Забронировать
