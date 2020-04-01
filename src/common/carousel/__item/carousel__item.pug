@@ -1,0 +1,6 @@
+mixin carousel__item(options)
+    - let defaultOptions = {};
+    - let {src} = Object.assign(defaultOptions, options);
+
+    .carousel__item
+        img(src= src.default)

@@ -17,10 +17,12 @@ const rangeSlider = options => {
             range: true,
             values: [from, to],
             slide: (event, ui) => {
-                comment.html(currency({value: ui.values[0]}) + currency({value: ui.values[1]}));
+                comment
+                    .empty()
+                    .append(currency({value: ui.values[0]}), currency({value: ui.values[1]}));
             }
         })
-        comment.html(currency({value: from}) + currency({value: to}));
+        comment.append(currency({value: from}), currency({value: to}));
     })
 }
 

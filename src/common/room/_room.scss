@@ -97,4 +97,39 @@
   &__total-price {
     grid-area: total;
   }
+
+  &__figure {
+    background: $white;
+    box-shadow: 0 10px 20px $dark05;
+    border-radius: 4px;
+  }
+
+  &__image {
+
+  }
+
+  &__figcaption {
+    padding: 20px;
+  }
+
+  &__delimiter {
+    grid-template-columns: 1fr;
+    height: 0;
+    border-bottom: 1px solid $dark10;
+  }
+
+  &__feedback {
+    grid-template-areas: "rate votes";
+    justify-content: space-between;
+    align-items: center;
+    grid-template-columns: max-content max-content;
+  }
+
+  &__rate {
+    grid-area: rate;
+  }
+
+  &__votes {
+    grid-area: votes;
+  }
 }

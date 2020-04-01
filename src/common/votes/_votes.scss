@@ -1,0 +1,17 @@
+.votes {
+  display: grid;
+  grid-template-areas: "votes postfix";
+  grid-template-columns: max-content max-content;
+  grid-gap: 3px;
+
+  &:before {
+    content: attr(data-votes);
+    @extend %body;
+    font-weight: bold;
+    grid-area: votes;
+  }
+
+  &:after {
+    content: attr(data-postfix);
+  }
+}

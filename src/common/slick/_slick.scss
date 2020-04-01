@@ -1,0 +1,83 @@
+.slick {
+
+  &-slider {
+    display: grid;
+
+    &:hover {
+      .slick-arrow {
+        --pos: 10;
+      }
+    }
+  }
+
+  &-arrow {
+    position: absolute;
+    display: grid;
+    height: 100%;
+    width: 42px;
+    z-index: var(--pos, -1);
+    border: none;
+    top: 0;
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+
+    &:after {
+      content: 'expand_more';
+      transform: rotate(90deg);
+      @extend %icon;
+      font-size: 24px;
+      line-height: 24px;
+      color: $white;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &-prev {
+    left: 0;
+  }
+
+  &-next {
+    right: 0;
+    transform: rotate(180deg);
+  }
+
+  &-dots {
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: end;
+    grid-auto-columns: min-content;
+    grid-gap: 3.75px;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+
+    & > li[role= 'presentation'] {
+      cursor: pointer;
+      border: 1px solid $white;
+      border-radius: 50%;
+      box-sizing: border-box;
+      height: 7.5px;
+      width: 7.5px;
+      z-index: 100;
+
+      &.slick-active {
+        background: $white;
+      }
+
+      & button {
+        color: transparent;
+        background: transparent;
+        border: none;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+
+        &:focus {
+          outline: none;
+        }
+      }
+    }
+  }
+}

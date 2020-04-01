@@ -12,6 +12,7 @@ include ../../components/room-filter-card
 include ../../components/room-card
 include ../../components/login/register-card
 include ../../components/login/login-card
+include ../../components/cards/number-card
 
 +container
     +page
@@ -43,3 +44,31 @@ include ../../components/login/login-card
             .grid.grid__list.grid__list_gap_40
                 .block.block_width_320
                     .datepicker-container(data-classes= "block block_width_320" data-range= 1 data-clear-button= 1)
+                .block.block_width_270
+                    +number-card({
+                        number: 888,
+                        type: "Люкс",
+                        price: 9990,
+                        stars: 5,
+                        votes: 145,
+                        items: [
+                            {src: require("../../img/carousel_1.png")},
+                            {src: require("../../img/carousel_1.png")},
+                            {src: require("../../img/carousel_1.png")},
+                            {src: require("../../img/carousel_1.png")},
+                        ]
+                    })
+                .block.block_width_270
+                    +number-card({
+                        number: 840,
+                        type: "Люкс",
+                        price: 9900,
+                        stars: 4,
+                        votes: 65,
+                        items: [
+                            {src: require("../../img/carousel_2.png")},
+                            {src: require("../../img/carousel_2.png")},
+                            {src: require("../../img/carousel_2.png")},
+                            {src: require("../../img/carousel_2.png")},
+                        ]
+                    })

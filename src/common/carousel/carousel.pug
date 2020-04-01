@@ -1,0 +1,9 @@
+include ./__item/carousel__item
+
+mixin carousel(options)
+    - let defaultOptions = {};
+    - let {items} = Object.assign(defaultOptions,options);
+
+    .carousel-container
+        for item in items
+            +carousel__item(item)
