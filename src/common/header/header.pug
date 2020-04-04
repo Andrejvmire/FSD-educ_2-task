@@ -1,32 +1,33 @@
 mixin header(options)
     - let defaultOptions = {auth: false};
     - let {auth, username} = Object.assign(defaultOptions, options);
-    header.header.content
-        .logo.logo__color.logo__title.header__logo
-        .header__menu
-            ul.menu.menu__wrapper.menu__inline
-                li
-                    a.menu.menu__item.menu__item_current(href="#") home
-                li
-                    a.menu.menu__item(href="#") about us
-                li
-                    a.menu.menu__item.menu__dropdown services
-                    ul.menu.menu__submenu.menu__submenu_hide
-                        li
-                            a.menu.menu__item(href="#") 1
-                        li
-                            a.menu.menu__item(href="#") 2
-                        li
-                            a.menu.menu__item(href="#") 3
-                li
-                    a.menu.menu__item(href="#") careers
-                li
-                    a.menu.menu__item(href="#") news
-                li
-                    a.menu.menu__item(href="#") documentation
-            .header__auth
-                if (auth)
-                    .header__user= username
-                else
-                    button.button.button_type_bordered.button_fit Login
-                    button.button.button_type_filled.button_fit Register
+    header.header
+        .header__wrapper.content
+            .logo.logo__color.logo__title.header__logo
+            .header__menu
+                ul.menu.menu__wrapper.menu__inline
+                    li
+                        a.menu.menu__item.menu__item_current(href="#") home
+                    li
+                        a.menu.menu__item(href="#") about us
+                    li
+                        a.menu.menu__item.menu__dropdown services
+                        ul.menu.menu__submenu.menu__submenu_hide
+                            li
+                                a.menu.menu__item(href="#") 1
+                            li
+                                a.menu.menu__item(href="#") 2
+                            li
+                                a.menu.menu__item(href="#") 3
+                    li
+                        a.menu.menu__item(href="#") careers
+                    li
+                        a.menu.menu__item(href="#") news
+                    li
+                        a.menu.menu__item(href="#") documentation
+                .header__auth
+                    if (auth)
+                        .header__user= username
+                    else
+                        button.button.button_type_bordered.button_fit Login
+                        button.button.button_type_filled.button_fit Register

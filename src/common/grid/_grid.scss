@@ -4,6 +4,7 @@
   @import "./_span/_span";
   @import "./_align/_align";
   @import "./_justify/_justify";
+  @import "../block/__width/__width";
 
   &__auto-columns {
     grid-auto-flow: column;

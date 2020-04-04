@@ -3,5 +3,11 @@
     &_space-between {
       justify-content: space-between;
     }
+
+    &_center {
+      justify-content: center;
+      justify-items: center;
+      text-align: center;
+    }
   }
 }
