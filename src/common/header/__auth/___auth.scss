@@ -1,0 +1,8 @@
+@if (&) {
+  &__auth {
+    display: grid;
+    grid-area: user_auth;
+    grid-auto-flow: column;
+    grid-gap: 20px;
+  }
+}

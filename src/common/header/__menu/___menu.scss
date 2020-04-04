@@ -1,0 +1,7 @@
+@if (&) {
+  &__menu {
+    display: grid;
+    grid-template-areas: "menu user_auth";
+    grid-gap: 30px;
+  }
+}
