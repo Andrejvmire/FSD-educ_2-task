@@ -1,32 +1,38 @@
 .logo {
   $border-width: 3px;
-  display: block;
-  position: absolute;
-  width: 48px;
-  height: 48px;
-  border: $border-width solid $dark25;
-  border-radius: 48px;
+  display: grid;
+  grid-template-areas: "logo title";
+  grid-template-columns: max-content max-content;
+  grid-gap: 12.5px;
+  align-items: center;
+  align-content: center;
 
-  &:before, &:after {
-    content: '';
+  &__watermark {
     position: absolute;
-    top: 15px;
-    display: block;
-    height: 14.12px*2;
-    width: 14.12px*2;
-    border: $border-width solid transparent;
-    transform: rotate(-45deg);
+    top: 30px;
+    left: 30px;
+  }
+
+  &__title {
+    &:after {
+      content: url("../common/logo/img/toxin.svg");
+      grid-area: title;
+    }
   }
 
   &:before {
-    left: -6px;
-    border-right-color: $dark25;
-    border-radius: 30px;
+    grid-area: logo;
   }
 
-  &:after {
-    right: -6px;
-    border-radius: 30px;
-    border-top-color: $dark25;
+  &__grey {
+    &:before {
+      content: url("../common/logo/img/logo__grey.svg");
+    }
+  }
+
+  &__color {
+    &:before {
+      content: url("../common/logo/img/logo__color.svg");
+    }
   }
 }

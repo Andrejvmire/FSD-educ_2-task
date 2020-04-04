@@ -1,0 +1,25 @@
+include ../../common/container/container
+include ../../common/page/page
+include ../../common/group/group
+include ../../common/input/input
+include ../../common/checkbox/checkbox
+include ../../common/rate/rate
+include ../../common/range_slider/range_slider
+include ../../common/pagination/pagination
+include ../../common/fieldset/fieldset
+include ../../common/list/list
+include ../../common/feedback/feedback
+include ../../common/header/header
+include ../../common/footer/footer
+include ../../common/copyright/copyright
+
++container
+    +page
+        .logo.logo__grey.logo__watermark
+        .grid.grid__list.grid__list_gap_40
+            +header
+            +header({
+                auth: true,
+                username: "cosmin negoita"
+            })
+            +footer

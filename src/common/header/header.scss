@@ -1,9 +1,36 @@
 .header {
+  @import "./__menu/__menu";
+  @import "./__auth/__auth";
 
-  &__watermark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 30px;
+  display: grid;
+  width: 100%;
+  height: 70px;
+  background: $white;
+  grid-template-areas: "header_logo header_menu";
+  justify-content: space-between;
+
+  &__logo {
+    grid-area: header_logo;
+    align-self: center;
+  }
+
+  &__menu {
+    grid-area: header_menu;
+    align-self: center;
+  }
+
+  &__user {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 30px;
+    align-items: center;
+    text-transform: capitalize;
+
+    &:before {
+      content: '';
+      display: grid;
+      height: 30px;
+      border: 1px solid $dark10;
+    }
   }
 }

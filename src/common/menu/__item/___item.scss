@@ -1,0 +1,13 @@
+@if (&) {
+  &__item {
+    @extend %body;
+    text-transform: capitalize;
+    text-decoration: none;
+    color: $dark50;
+
+    &_current {
+      font-weight: bold;
+      color: $dark75;
+    }
+  }
+}

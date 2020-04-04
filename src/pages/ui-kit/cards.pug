@@ -1,6 +1,5 @@
 include ../../common/container/container
 include ../../common/page/page
-include ../../common/header/header__watermark
 include ../../common/group/group
 include ../../common/input/input
 include ../../common/checkbox/checkbox
@@ -8,67 +7,67 @@ include ../../common/rate/rate
 include ../../common/fieldset/fieldset
 include ../../common/list/list
 include ../../common/feedback/feedback
-include ../../components/room-filter-card
-include ../../components/room-card
-include ../../components/login/register-card
-include ../../components/login/login-card
-include ../../components/cards/number-card
+include ../../common/cards/room-filter-card
+include ../../common/cards/room-card
+include ../../common/login/register-card
+include ../../common/login/login-card
+include ../../common/cards/number-card
 
 +container
+    .logo.logo__grey.logo__watermark
     +page
-        .header.header__watermark
-            .logo
-        .grid.grid__auto-columns.grid__auto-columns_gap_40
-            .grid.grid__list.grid__list_gap_40
-                .block.block_width_380
-                    +room-filter-card({
-                        title: "Найдём номера под ваши пожелания"
-                    })
-                .block.block_width_380
-                    +register-card({
-                        title: "Регистрация аккаунта"
-                    })
-            .grid.grid__list.grid__list_gap_40
-                .block.block_width_380
-                    +room-card({
-                        number: "888",
-                        type: "люкс",
-                        price: 9990,
-                        date: {
-                            check_in: "19.08.2019",
-                            check_out: "23.08.2019"
-                        }
-                    })
-                .block.block_width_380
-                    +login-card({})
-            .grid.grid__list.grid__list_gap_40
-                .block.block_width_320
-                    .datepicker-container(data-classes= "block block_width_320" data-range= 1 data-clear-button= 1)
-                .block.block_width_270
-                    +number-card({
-                        number: 888,
-                        type: "Люкс",
-                        price: 9990,
-                        stars: 5,
-                        votes: 145,
-                        items: [
-                            {src: require("../../img/carousel_1.png")},
-                            {src: require("../../img/carousel_1.png")},
-                            {src: require("../../img/carousel_1.png")},
-                            {src: require("../../img/carousel_1.png")},
-                        ]
-                    })
-                .block.block_width_270
-                    +number-card({
-                        number: 840,
-                        type: "Люкс",
-                        price: 9900,
-                        stars: 4,
-                        votes: 65,
-                        items: [
-                            {src: require("../../img/carousel_2.png")},
-                            {src: require("../../img/carousel_2.png")},
-                            {src: require("../../img/carousel_2.png")},
-                            {src: require("../../img/carousel_2.png")},
-                        ]
-                    })
+        .content
+            .grid.grid__auto-columns.grid__auto-columns_gap_40
+                .grid.grid__list.grid__list_gap_40
+                    .block.block_width_380
+                        +room-filter-card({
+                            title: "Найдём номера под ваши пожелания"
+                        })
+                    .block.block_width_380
+                        +register-card({
+                            title: "Регистрация аккаунта"
+                        })
+                .grid.grid__list.grid__list_gap_40
+                    .block.block_width_380
+                        +room-card({
+                            number: "888",
+                            type: "люкс",
+                            price: 9990,
+                            date: {
+                                check_in: "19.08.2019",
+                                check_out: "23.08.2019"
+                            }
+                        })
+                    .block.block_width_380
+                        +login-card({})
+                .grid.grid__list.grid__list_gap_40
+                    .block.block_width_320
+                        .datepicker-container(data-classes= "block block_width_320" data-range= 1 data-clear-button= 1)
+                    .block.block_width_270
+                        +number-card({
+                            number: 888,
+                            type: "Люкс",
+                            price: 9990,
+                            stars: 5,
+                            votes: 145,
+                            items: [
+                                {src: require("../../img/carousel_1.png")},
+                                {src: require("../../img/carousel_1.png")},
+                                {src: require("../../img/carousel_1.png")},
+                                {src: require("../../img/carousel_1.png")},
+                            ]
+                        })
+                    .block.block_width_270
+                        +number-card({
+                            number: 840,
+                            type: "Люкс",
+                            price: 9900,
+                            stars: 4,
+                            votes: 65,
+                            items: [
+                                {src: require("../../img/carousel_2.png")},
+                                {src: require("../../img/carousel_2.png")},
+                                {src: require("../../img/carousel_2.png")},
+                                {src: require("../../img/carousel_2.png")},
+                            ]
+                        })

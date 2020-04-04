@@ -1,0 +1,40 @@
+.menu {
+  @import "./__inline/__inline";
+  @import "./__item/__item";
+
+  &__wrapper {
+    list-style-type: none;
+    display: grid;
+    grid-area: menu;
+    align-content: center;
+  }
+
+  &__item {
+    &:after {
+      @extend %icon;
+      content: ' ';
+      font-size: 24px;
+      line-height: .5;
+      width: 24px;
+    }
+  }
+
+  &__dropdown {
+    cursor: pointer;
+    display: grid;
+    grid-auto-flow: column;
+    align-content: start;
+
+    &:after {
+      content: 'expand_more';
+    }
+  }
+
+  &__submenu {
+    position: absolute;
+
+    &_hide {
+      display: none;
+    }
+  }
+}
