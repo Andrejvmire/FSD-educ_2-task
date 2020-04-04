@@ -47,7 +47,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|jpe?g|img|svg|gif)$/,
+                test: /\.(png|jpe?g|img|gif)$/,
                 use: {
                     loader: "file-loader",
                     options: {
@@ -82,6 +82,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: Path.join(__dirname, "src", "pages", "ui-kit", "cards.pug"),
             filename: Path.join(__dirname, "dist", "cards.html")
+        }),
+        new HtmlWebpackPlugin({
+            template: Path.join(__dirname, "src", "pages", "ui-kit", "headers.pug"),
+            filename: Path.join(__dirname, "dist", "headers.html")
         }),
         new Webpack.ProvidePlugin({
             $: 'jquery',
