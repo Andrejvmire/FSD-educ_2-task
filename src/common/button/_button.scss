@@ -4,10 +4,10 @@
   align-items: center;
   justify-items: center;
   border: none;
-  padding: 0;
   background: $white;
   color: $purple;
   cursor: pointer;
+  border-radius: 22px;
 
   &:active,
   &_active {
@@ -47,15 +47,22 @@
 
     &_bordered {
       border: 2px solid $purple;
-      height: 44px;
-      border-radius: 22px;
     }
+  }
+
+  &_fit {
+    padding: 8px 19px;
+  }
+
+  &_fat {
+    height: 44px;
   }
 
   &_width {
     &_small {
       width: 99px;
     }
+
     &_big {
       width: 320px;
     }

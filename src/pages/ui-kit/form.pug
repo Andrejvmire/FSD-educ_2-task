@@ -1,6 +1,5 @@
 include ../../common/container/container
 include ../../common/page/page
-include ../../common/header/header__watermark
 include ../../common/group/group
 include ../../common/input/input
 include ../../common/checkbox/checkbox
@@ -12,259 +11,260 @@ include ../../common/list/list
 include ../../common/feedback/feedback
 
 +container
-    +page
-        +header__watermark
-            .logo
-        .grid.grid__list.grid__list_gap_100
-            .grid.grid__3-columns.grid__3-columns_gap_125
-                .grid.grid__list.grid__list_gap_25
-                    +group({
-                        label: "Text field",
-                        comment: "default"
-                    })
-                        +input__text({
-                            placeholder: "Email",
-                        })
-                    +group({
-                        label: "Text field"
-                    })
-                        +input__text({
-                            placeholder: "email",
-                            value: "This is pretty awesome"
-                        })
-                    +group({
-                        label: "Dropdown"
-                    })
-                        +fieldset__dropdown({
-                            value: "Сколько гостей"
-                        })
-                    +group({
-                        label: "Masked text field"
-                    })
-                        +input__text_masked({
-                            placeholder: "ДД.ММ.ГГГГ",
-                            mask: '99.99.9999'
-                        })
-                    .grid.grid__2-columns.grid__2-columns_gap_20
-                        +group({
-                            label: "Date dropdown"
-                        })
-                            +fieldset__dropdown({
-                                placeholder: "ДД.ММ.ГГГГ",
+    .background.background_color_white
+        .logo.logo__grey.logo__watermark
+        +page
+            .content
+                .grid.grid__list.grid__list_gap_100
+                    .grid.grid__3-columns.grid__3-columns_gap_125
+                        .grid.grid__list.grid__list_gap_25
+                            +group({
+                                label: "Text field",
+                                comment: "default"
                             })
-                        +group({
-                            label: "Date dropdown"
-                        })
-                            +fieldset__dropdown({
-                                placeholder: "ДД.ММ.ГГГГ",
-                                value: "19.08.2019"
-                            })
-                    .block.block_width_266
-                        +group({
-                            label: "Filter date dropdown"
-                        })
-                            +fieldset__dropdown({
-                                value: "19 авг - 23 авг"
-                            })
-                    .block.block_width_266
-                        +group({
-                            label: "Subscription text field"
-                        })
-                            +input__text_subscription({
-                                placeholder: "Email",
-                            })
-                .block.block_width_266
-                    .grid.grid__list.grid__list_gap_50
-                        +group({
-                            label: "Checkbox buttons",
-                            className: ".grid.grid__list.grid__list_gap_15"
-                        })
-                            .grid.grid__list.grid__list_gap_10
-                                +checkbox({label: "Можно курить"})
-                                +checkbox({label: "Можно с питомцами", checked: true})
-                                +checkbox({label: "Можно пригласить гостей (до 10 человек)", checked: true})
-                        +group({
-                            label: "Radio buttons",
-                            className: ".grid.grid__list.grid__list_gap_15"
-                        })
-                            .grid.grid__2-columns
-                                +checkbox({label: "Мужчина", type: "radio", name: "male", checked: true})
-                                +checkbox({label: "Женщина", type: "radio", name: "male"})
-                        +group({
-                            label: "Toggle",
-                            className: ".grid.grid__list.grid__list_gap_15"
-                        })
-                            .grid.grid__list.grid__list_gap_10
-                                +checkbox({
-                                    label: "Получать спецпредложения",
-                                    name: "toggle",
-                                    checked: true,
-                                    className: "switch"
+                                +input__text({
+                                    placeholder: "Email",
                                 })
-                                +checkbox({
-                                    label: "Получать спецпредложения",
-                                    name: "toggle",
-                                    className: "switch"
-                                })
-                        +group({
-                            label: "like button",
-                            className: ".grid.grid__list.grid__list_gap_15"
-                        })
-                            .grid.grid__auto-columns
-                                +checkbox({
-                                    name: 'like',
-                                    className: 'like',
-                                    count: 2
-                                })
-                                +checkbox({
-                                    name: 'like',
-                                    checked: true,
-                                    className: 'like',
-                                    count: 12
-                                })
-                        +group({
-                            label: "rate button",
-                            className: ".grid.grid__list.grid__list_gap_15"
-                        })
-                            .grid.grid__2-columns
-                                +rate({stars: 4})
-                                +rate({stars: 5})
-                .grid.grid__list.grid__list_gap_50
-                    .block.block_width_266
-                        +group({
-                            label: "Range slider",
-                            comment_id: "range_slider_comment",
-                            className: ".grid.grid__list.grid__list_gap_20"
-                        })
-                            +range_slider({
-                                type: "double",
-                                value: {
-                                    min: 200,
-                                    max: 15000,
-                                    from: 5000,
-                                    to: 10000
-                                },
-                                currency: "₽",
-                                comment_id: "range_slider_comment"
+                            +group({
+                                label: "Text field"
                             })
-
-                    +group({
-                        label: "Buttons",
-                        className: ".grid.grid__list.grid__list_gap_20"
-                    })
+                                +input__text({
+                                    placeholder: "email",
+                                    value: "This is pretty awesome"
+                                })
+                            +group({
+                                label: "Dropdown"
+                            })
+                                +fieldset__dropdown({
+                                    value: "Сколько гостей"
+                                })
+                            +group({
+                                label: "Masked text field"
+                            })
+                                +input__text_masked({
+                                    placeholder: "ДД.ММ.ГГГГ",
+                                    mask: '99.99.9999'
+                                })
+                            .grid.grid__2-columns.grid__2-columns_gap_20
+                                +group({
+                                    label: "Date dropdown"
+                                })
+                                    +fieldset__dropdown({
+                                        placeholder: "ДД.ММ.ГГГГ",
+                                    })
+                                +group({
+                                    label: "Date dropdown"
+                                })
+                                    +fieldset__dropdown({
+                                        placeholder: "ДД.ММ.ГГГГ",
+                                        value: "19.08.2019"
+                                    })
+                            .block.block_width_266
+                                +group({
+                                    label: "Filter date dropdown"
+                                })
+                                    +fieldset__dropdown({
+                                        value: "19 авг - 23 авг"
+                                    })
+                            .block.block_width_266
+                                +group({
+                                    label: "Subscription text field"
+                                })
+                                    +input__text_subscription({
+                                        placeholder: "Email",
+                                    })
                         .block.block_width_266
-                            .grid.grid__list.grid__list_gap_20
-                                .grid.grid__auto-columns.grid__auto-columns_gap_20
-                                    button.button.button_type_filled.button_type_bordered.button_width_small click me
-                                    button.button.button_type_filled.button_type_bordered.button_width_small.button_active click me
-                                .grid.grid__auto-columns.grid__auto-columns_gap_20
-                                    button.button.button_type_bordered.button_width_small click me
-                                    button.button.button_type_bordered.button_width_small.button_active click me
-                                .grid.grid__auto-columns.grid__auto-columns_gap_20
-                                    a.button.button_width_small click me
-                                    a.button.button_width_small.button_active click me
-                                .grid.grid__auto-columns
-                                    button.button.button_width_big.button_type_bordered.button_type_filled.button__arrow-forward перейти к оплате
-                    .block.block_width_266
-                        +group({
-                            label: "Pagination",
-                            className: ".grid.grid__list.grid__list_gap_20"
-                        })
-                            +pagination({id: "pagination"})
-            .grid.grid__3-columns.grid__3-columns_gap_125
-                .grid.grid__list.grid__list_gap_20
-                    .block.block_width_266
-                        +group({
-                            label: "dropdown"
-                        })
-                            +fieldset__dropdown({
-                                value: "2 спальни, 2 кровати, ...",
-                                id: "bedroom1"
-                            })
-                    .block.block_width_266
-                        +group({
-                            label: "dropdown"
-                        })
-                            +fieldset__dropdown({
-                                value: "2 спальни, 2 кровати, ...",
-                                id: "bedroom2"
-                            })
-                .grid.grid__list
-                    .block.block_width_320
-                        +group({
-                            label: "dropdown"
-                        })
-                            +fieldset__dropdown({
-                                value: "Сколько гостей",
-                                id: "guests1"
-                            })
-                .grid.grid__list
-                    .block.block_width_320
-                        +group({
-                            label: "dropdown"
-                        })
-                            +fieldset__dropdown({
-                                value: "Сколько гостей",
-                                id: "guests2"
-                            })
-            .grid.grid__3-columns.grid__3-columns_gap_125
-                .blocl.block_width_266
-                    .grid.grid__list.grid__list_gap_50
-                        +group()
-                            +checkbox-expandable({
-                                value: "Expandable checkbox list",
-                                id: "expand1"
-                            })
-                        +group()
-                            +checkbox-expandable({
-                                value: "Expandable checkbox list",
-                                id: "expand2"
-                            })
-                .block.block_width_266
-                    .grid.grid__list
-                        +group({
-                            label: "rich checkbox buttons",
-                            className: ".grid.grid__list.grid__list_gap_15"
-                        })
-                            .grid.grid__list.grid__list_gap_15
-                                +checkbox({
-                                    label: "Широкий коридор",
-                                    subscription: "Ширина коридора в номере не менее 91 см."
+                            .grid.grid__list.grid__list_gap_50
+                                +group({
+                                    label: "Checkbox buttons",
+                                    className: ".grid.grid__list.grid__list_gap_15"
                                 })
-                                +checkbox({
-                                    label: "Помощник для инвалидов",
-                                    subscription: "На 1 этаже вас встретит специалист и проводит до номера."
+                                    .grid.grid__list.grid__list_gap_10
+                                        +checkbox({label: "Можно курить"})
+                                        +checkbox({label: "Можно с питомцами", checked: true})
+                                        +checkbox({label: "Можно пригласить гостей (до 10 человек)", checked: true})
+                                +group({
+                                    label: "Radio buttons",
+                                    className: ".grid.grid__list.grid__list_gap_15"
                                 })
-                .block.block_width_266
-                    .grid.grid__list
-                        +group({
-                            label: "bullet list",
-                            className: ".grid.grid__list.grid__list_gap_20"
-                        })
-                            ul.list
-                                li.bullet.bullet__item Нельзя с питомцами
-                                li.bullet.bullet__item Без вечеринок и мероприятий
-                                li.bullet.bullet__item Время прибытия &mdash; после 13:00, а выезд до 12:00
-            .grid.grid__3-columns.grid__3-columns_gap_125
-                .block.block_width_280
-                    .grid.grid__list
-                        +group({})
-                            +list({className: ".grid.grid__list.grid__list_gap_20"})
-                                li.item.item__icon.item__icon_color_purple(data-image="insert_emoticon")
-                                    span.item__title Комфорт
-                                    span.item__description Шумопоглащающие стены
-                                li.item.item__icon.item__icon_color_purple(data-image="location_city")
-                                    span.item__title Удобство
-                                    span.item__description Окно в каждой из спален
-                .grid.grid_span_2
-                    +group()
-                        +feedback({
-                            name: 'feed_from_sarafan',
-                            count: 12,
-                            username: "Мурад Сарафанов",
-                            date: "5 дней назад",
-                            src: require("../../common/feedback/img/murad.png"),
-                            text: `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.
-                             И стены, действительно, шумоподавляющие.
-                             Выкрикивал комплименты повару &mdash; никто не жаловался из соседей`
-                        })
+                                    .grid.grid__2-columns
+                                        +checkbox({label: "Мужчина", type: "radio", name: "male", checked: true})
+                                        +checkbox({label: "Женщина", type: "radio", name: "male"})
+                                +group({
+                                    label: "Toggle",
+                                    className: ".grid.grid__list.grid__list_gap_15"
+                                })
+                                    .grid.grid__list.grid__list_gap_10
+                                        +checkbox({
+                                            label: "Получать спецпредложения",
+                                            name: "toggle",
+                                            checked: true,
+                                            className: "switch"
+                                        })
+                                        +checkbox({
+                                            label: "Получать спецпредложения",
+                                            name: "toggle",
+                                            className: "switch"
+                                        })
+                                +group({
+                                    label: "like button",
+                                    className: ".grid.grid__list.grid__list_gap_15"
+                                })
+                                    .grid.grid__auto-columns
+                                        +checkbox({
+                                            name: 'like',
+                                            className: 'like',
+                                            count: 2
+                                        })
+                                        +checkbox({
+                                            name: 'like',
+                                            checked: true,
+                                            className: 'like',
+                                            count: 12
+                                        })
+                                +group({
+                                    label: "rate button",
+                                    className: ".grid.grid__list.grid__list_gap_15"
+                                })
+                                    .grid.grid__2-columns
+                                        +rate({stars: 4})
+                                        +rate({stars: 5})
+                        .grid.grid__list.grid__list_gap_50
+                            .block.block_width_266
+                                +group({
+                                    label: "Range slider",
+                                    comment_id: "range_slider_comment",
+                                    className: ".grid.grid__list.grid__list_gap_20"
+                                })
+                                    +range_slider({
+                                        type: "double",
+                                        value: {
+                                            min: 200,
+                                            max: 15000,
+                                            from: 5000,
+                                            to: 10000
+                                        },
+                                        currency: "₽",
+                                        comment_id: "range_slider_comment"
+                                    })
+
+                            +group({
+                                label: "Buttons",
+                                className: ".grid.grid__list.grid__list_gap_20"
+                            })
+                                .block.block_width_266
+                                    .grid.grid__list.grid__list_gap_20
+                                        .grid.grid__auto-columns.grid__auto-columns_gap_20
+                                            button.button.button_type_filled.button_type_bordered.button_width_small.button_fat click me
+                                            button.button.button_type_filled.button_type_bordered.button_width_small.button_active.button_fat click me
+                                        .grid.grid__auto-columns.grid__auto-columns_gap_20
+                                            button.button.button_type_bordered.button_width_small.button_fat click me
+                                            button.button.button_type_bordered.button_width_small.button_active.button_fat click me
+                                        .grid.grid__auto-columns.grid__auto-columns_gap_20
+                                            a.button.button_width_small.button_fat click me
+                                            a.button.button_width_small.button_active.button_fat click me
+                                        .grid.grid__auto-columns
+                                            button.button.button_width_big.button_type_bordered.button_type_filled.button__arrow-forward.button_fat перейти к оплате
+                            .block.block_width_266
+                                +group({
+                                    label: "Pagination",
+                                    className: ".grid.grid__list.grid__list_gap_20"
+                                })
+                                    +pagination({id: "pagination"})
+                    .grid.grid__3-columns.grid__3-columns_gap_125
+                        .grid.grid__list.grid__list_gap_20
+                            .block.block_width_266
+                                +group({
+                                    label: "dropdown"
+                                })
+                                    +fieldset__dropdown({
+                                        value: "2 спальни, 2 кровати, ...",
+                                        id: "bedroom1"
+                                    })
+                            .block.block_width_266
+                                +group({
+                                    label: "dropdown"
+                                })
+                                    +fieldset__dropdown({
+                                        value: "2 спальни, 2 кровати, ...",
+                                        id: "bedroom2"
+                                    })
+                        .grid.grid__list
+                            .block.block_width_320
+                                +group({
+                                    label: "dropdown"
+                                })
+                                    +fieldset__dropdown({
+                                        value: "Сколько гостей",
+                                        id: "guests1"
+                                    })
+                        .grid.grid__list
+                            .block.block_width_320
+                                +group({
+                                    label: "dropdown"
+                                })
+                                    +fieldset__dropdown({
+                                        value: "Сколько гостей",
+                                        id: "guests2"
+                                    })
+                    .grid.grid__3-columns.grid__3-columns_gap_125
+                        .blocl.block_width_266
+                            .grid.grid__list.grid__list_gap_50
+                                +group()
+                                    +checkbox-expandable({
+                                        value: "Expandable checkbox list",
+                                        id: "expand1"
+                                    })
+                                +group()
+                                    +checkbox-expandable({
+                                        value: "Expandable checkbox list",
+                                        id: "expand2"
+                                    })
+                        .block.block_width_266
+                            .grid.grid__list
+                                +group({
+                                    label: "rich checkbox buttons",
+                                    className: ".grid.grid__list.grid__list_gap_15"
+                                })
+                                    .grid.grid__list.grid__list_gap_15
+                                        +checkbox({
+                                            label: "Широкий коридор",
+                                            subscription: "Ширина коридора в номере не менее 91 см."
+                                        })
+                                        +checkbox({
+                                            label: "Помощник для инвалидов",
+                                            subscription: "На 1 этаже вас встретит специалист и проводит до номера."
+                                        })
+                        .block.block_width_266
+                            .grid.grid__list
+                                +group({
+                                    label: "bullet list",
+                                    className: ".grid.grid__list.grid__list_gap_20"
+                                })
+                                    ul.list
+                                        li.bullet.bullet__item Нельзя с питомцами
+                                        li.bullet.bullet__item Без вечеринок и мероприятий
+                                        li.bullet.bullet__item Время прибытия &mdash; после 13:00, а выезд до 12:00
+                    .grid.grid__3-columns.grid__3-columns_gap_125
+                        .block.block_width_280
+                            .grid.grid__list
+                                +group({})
+                                    +list({className: ".grid.grid__list.grid__list_gap_20"})
+                                        li.item.item__icon.item__icon_color_purple(data-image="insert_emoticon")
+                                            span.item__title Комфорт
+                                            span.item__description Шумопоглащающие стены
+                                        li.item.item__icon.item__icon_color_purple(data-image="location_city")
+                                            span.item__title Удобство
+                                            span.item__description Окно в каждой из спален
+                        .grid.grid_span_2
+                            +group()
+                                +feedback({
+                                    name: 'feed_from_sarafan',
+                                    count: 12,
+                                    username: "Мурад Сарафанов",
+                                    date: "5 дней назад",
+                                    src: require("../../common/feedback/img/murad.png"),
+                                    text: `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.
+                                     И стены, действительно, шумоподавляющие.
+                                     Выкрикивал комплименты повару &mdash; никто не жаловался из соседей`
+                                })

@@ -15,6 +15,7 @@ let calendar = $('.datepicker-container').datepicker({
 
 calendar = calendar.data('datepicker');
 const parse = (object) => {
+    if (object === undefined) return;
     let {$el, $nav, $content, $buttons} = object;
     $el.find('.datepicker--buttons')
         .append(
