@@ -1,3 +1,5 @@
+import slick from 'slick-carousel';
+
 const carousel = (options) => {
     let $container = $('.carousel-container');
     if ($container.length === 0) return;
