@@ -22,15 +22,6 @@ const fieldset = ((options) => {
                     :
                     ''
             });
-            self.off('mouseout');
-            self.on('mouseout', function (e) {
-                if (!$(this).find(e.relatedTarget).length) {
-                    icon.removeClass('rotate');
-                    content.removeClass(contentClass + '_show');
-                    label.removeClass('fieldset__label_border_top');
-                    self.off('mouseout');
-                }
-            })
         });
     })
 })
