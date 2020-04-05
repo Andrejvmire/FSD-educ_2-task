@@ -11,6 +11,10 @@
     height: var(--size, 40px);
   }
 
+  &--pointer {
+    display: none;
+  }
+
   &--nav {
     padding: var(--padding, 4px);
     border-bottom: none;
