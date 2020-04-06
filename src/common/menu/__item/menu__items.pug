@@ -1,6 +1,11 @@
 mixin menu__items(options)
     -
-        let defaultOptions = {className: ".menu.menu__item", currentClassName: '.menu__item_current', submenu: false},
+        let defaultOptions = {
+                    className: ".menu.menu__item",
+                    currentClassName: '.menu__item_current',
+                    submenu: false,
+                    href: "#"
+                },
                 {className, name, href, current, submenu, currentClassName} = Object.assign(defaultOptions, options);
         className = (
                 current !== undefined
