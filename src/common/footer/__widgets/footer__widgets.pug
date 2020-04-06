@@ -32,9 +32,12 @@ mixin footer__widgets(options)
                 className: ".grid.grid__list.grid__list_gap_20",
                 placeholder: "Your email address",
                 description: "Receive our latest news and promotions in your inbox!"
+            },
+            copyright: {
+                text: "Copyright © 2018 Toxin UI Kit. All rights reserved."
             }
         };
-        let {companyDescription, groups, subscription} = Object.assign(defaultOptions, options);
+        let {companyDescription, groups, subscription, copiright} = Object.assign(defaultOptions, options);
 
     .footer
         .footer__widgets.content.grid
@@ -62,4 +65,4 @@ mixin footer__widgets(options)
                         +input__text_subscription({
                             placeholder: subscription.placeholder
                         })
-        +copyright
+        +copyright(copiright)
