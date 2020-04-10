@@ -2,6 +2,16 @@
   background: $white;
   @import "./__menu/__menu";
   @import "./__auth/__auth";
+  @import "../_position/_position";
+
+  &_top {
+    top: 0;
+  }
+
+  &_center {
+    left: 0;
+    right: 0;
+  }
 
   &__wrapper {
     display: grid;

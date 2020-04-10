@@ -4,6 +4,7 @@ mixin header(options)
     -
         let defaultOptions = {
             auth: false,
+            className: '',
             loginButtonName: "Login",
             registerButtonName: "Register",
             menuItems: [
@@ -21,12 +22,14 @@ mixin header(options)
                 {name: "documentation", href: "#"}
             ]
         };
-    - let {auth, username, loginButtonName, registerButtonName, menuItems} = Object.assign(defaultOptions, options);
-    header.header
+    -
+        let {auth, username, loginButtonName, registerButtonName, menuItems, className} = Object.assign(defaultOptions, options);
+        className = className.split('.').join(' ');
+    header.header(class= className)
         .header__wrapper.content
             .logo.logo__color.logo__title.header__logo
-            .header__menu
-                ul.menu.menu__wrapper.menu__inline
+            .header__menu.grid.grid__auto-columns_gap_20
+                ul.menu.menu__wrapper.menu__inline.grid.grid__auto-columns_gap_20
                     for item in menuItems
                         +menu__items(item)
                 .header__auth

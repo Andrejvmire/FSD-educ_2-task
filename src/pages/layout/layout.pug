@@ -1,12 +1,13 @@
-include ./src/common/header/header
-include ./src/common/footer/footer
+include ../../common/header/header
+include ../../common/footer/footer
 
 html
     title TOXIN
     body
-        main
+        main.main.main_full
             block main
                 +header({
+                    className: '.header_position_absolute.header_top.header_center',
                     registerButtonName: "Зарегестрироваться",
                     loginButtonName: "Войти",
                     menuItems: [
@@ -57,7 +58,12 @@ html
                 },
             ],
             subscription: {
-                title: "Получайте специальные предложения и новости сервиса",
-                placeholder: "Email"
+                title: "Подписка",
+                placeholder: "Email",
+                description: "Получайте специальные предложения и новости сервиса",
+                className: ".grid.grid__list.grid__list_gap_20"
+            },
+            copyright: {
+                text: "Copyright © 2018 Toxin отель. Все права зачищены."
             }
         })

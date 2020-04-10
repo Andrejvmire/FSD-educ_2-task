@@ -37,7 +37,7 @@ mixin footer__widgets(options)
                 text: "Copyright © 2018 Toxin UI Kit. All rights reserved."
             }
         };
-        let {companyDescription, groups, subscription, copiright} = Object.assign(defaultOptions, options);
+        let {companyDescription, groups, subscription, copyright} = Object.assign(defaultOptions, options);
 
     .footer
         .footer__widgets.content.grid
@@ -49,9 +49,9 @@ mixin footer__widgets(options)
                 .block
                     +group({
                         label: group.title,
-                        className: ".grid.grid__list.grid__list_gap_25"
+                        className: ".grid.grid__list.grid__list_row-gap_25"
                     })
-                        ul.menu.menu__wrapper.grid__list_gap_25
+                        ul.menu.menu__wrapper.grid.grid__list_gap_25
                             for item in (group.items)
                                 +menu__items(item)
             .block
@@ -65,4 +65,4 @@ mixin footer__widgets(options)
                         +input__text_subscription({
                             placeholder: subscription.placeholder
                         })
-        +copyright(copiright)
+        +copyright(copyright)

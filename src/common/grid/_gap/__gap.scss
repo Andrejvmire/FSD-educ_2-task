@@ -52,4 +52,9 @@
       grid-gap: 125px;
     }
   }
+  &_row-gap {
+    &_25 {
+      grid-row-gap: 25px;
+    }
+  }
 }

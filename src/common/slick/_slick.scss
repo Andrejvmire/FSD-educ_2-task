@@ -1,5 +1,11 @@
 .slick {
 
+  &__background {
+    display: block;
+    z-index: -100;
+    position: relative;
+  }
+
   &-slider {
     display: grid;
 

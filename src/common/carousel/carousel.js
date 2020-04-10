@@ -1,10 +1,13 @@
 import slick from 'slick-carousel';
 
-const carousel = (options) => {
-    let $container = $('.carousel-container');
-    if ($container.length === 0) return;
-    $container
-        .slick(options);
+const carousel = defaultOptions => {
+    return (container = '.carousel-container', options = {}) => {
+        let $container = $(container);
+        if ($container.length === 0) return;
+        $container.slick(
+            Object.assign(defaultOptions, options)
+        );
+    }
 }
 
 
@@ -18,4 +21,4 @@ const options = {
     nextArrow: '<button type="button" class="slick-next" />'
 }
 
-carousel(options);
+export default carousel(options);
