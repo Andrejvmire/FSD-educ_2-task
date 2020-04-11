@@ -1,6 +1,7 @@
 import renderList from "../../../common/list/list";
 import renderItem from "../../../common/item/item";
 import renderCheckbox from "../../../common/checkbox/renderCheckbox";
+import Paginator from "../../../common/pagination/pagination";
 
 let bedRoomResponse = (options) => ({
     response: [
@@ -70,3 +71,15 @@ let checkbox_list = (options) => ({
 renderList({id: "expand1"}, checkbox_list(), renderCheckbox);
 
 renderList({id: "expand2"}, checkbox_list(), renderCheckbox);
+
+Paginator({
+    id: 'pagination',
+    dataSource: (done) => {
+        let result = [];
+        for (let i = 0; i < 149; i++) {
+            result[i] = i;
+        }
+        done(result);
+    }
+},
+    data => console.log(data));

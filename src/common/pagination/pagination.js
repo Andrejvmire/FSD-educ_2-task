@@ -1,15 +1,18 @@
-require('paginationjs');
+import pagination from 'paginationjs';
 
-const Paginator = options => {
-    let {id, style, displayControl, dataSource, customizeText} = Object.assign(options);
-
-    id = '#' + id;
-    $(id).pagination({
-        ...style,
-        ...displayControl,
-        ...customizeText,
-        dataSource,
-    })
+const Paginator = defaultOptions => {
+    return (options = {}, callback = undefined) => {
+        let {id, style, displayControl, dataSource, customizeText} = Object.assign(defaultOptions, options);
+        let $id = $(`#${id}`);
+        if ($id.length === 0) return;
+        $id.pagination({
+            ...style,
+            ...displayControl,
+            ...customizeText,
+            dataSource,
+            callback
+        })
+    }
 };
 
 const formatNavigator = (currentPage, totalPage, totalNumber) => {
@@ -41,8 +44,7 @@ const customizeText = {
     formatNavigator,
 }
 
-Paginator({
-    id: 'pagination',
+export default Paginator({
     displayControl: {
         ...displayControl
     },
@@ -51,12 +53,5 @@ Paginator({
     },
     customizeText: {
         ...customizeText
-    },
-    dataSource: (done) => {
-        let result = [];
-        for (let i = 0; i < 149; i++) {
-            result[i] = i;
-        }
-        done(result);
     }
 });
