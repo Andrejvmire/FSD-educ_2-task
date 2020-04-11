@@ -1,4 +1,10 @@
 .page {
   padding-top: 140px;
+
+  &_padding {
+    &_100 {
+      padding-top: 100px;
+    }
+  }
 }
 
