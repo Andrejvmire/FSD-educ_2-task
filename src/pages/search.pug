@@ -1,1 +1,19 @@
 extends ./layout/layout
+include ../common/page/page
+include ../common/fieldset/fieldset
+append main
+    .content.background.background_color_white
+        +page({
+            className: ".page_padding_100"
+        })
+            .grid.grid__auto-columns.grid__auto-columns_gap_60
+                .block.block_width_266
+                    form
+                        .grid.grid__list.grid__list_gap_20
+                            +group({
+                                label: "Даты пребывания в отеле"
+                            })
+                                +fieldset__dropdown({
+                                    value: "19 авг - 23 авг",
+                                    className: 'datepicker-container'
+                                })
