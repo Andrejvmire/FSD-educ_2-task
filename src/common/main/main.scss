@@ -2,7 +2,7 @@
   &_full {
     @media screen and (min-width: 1440px) {
       & {
-        height: 900px;
+        min-height: 900px;
       }
     }
   }

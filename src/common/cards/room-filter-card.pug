@@ -1,8 +1,8 @@
 include ../fieldset/fieldset
 
 mixin room-filter-card(options)
-    - let {title} = options;
-    form.card
+    - let {title, href} = options;
+    form(action= href).card
         .grid.grid__list.grid__list_gap_20
             h1= title
             .grid.grid__2-columns.grid__2-columns_gap_25

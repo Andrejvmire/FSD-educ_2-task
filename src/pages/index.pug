@@ -9,8 +9,14 @@ append main
         img(src= require("../img/image 3.png").default)
     +page
         .content
-            .grid.grid__auto-columns
-                .block.block_width_380
-                    +room-filter-card({
-                        title: "Найдём номера под ваши пожелания"
-                    })
+            .grid.grid__2-columns.grid__2-row
+                .grid.grid__list
+                    .block.block_width_380
+                        +room-filter-card({
+                            title: "Найдём номера под ваши пожелания",
+                            href: "/search"
+                        })
+                .grid.grid_row_end.grid_column_end.grid_align_end.grid_justify_end
+                    .block.block_width_280(style= {padding: "0 0 18px 0"})
+                        p.text.text_align_end.landing.landing__tagline Лучшие номера для вашей работы, отдыха и просто вдохновения
+

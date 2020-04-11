@@ -1,4 +1,5 @@
 include ../menu/__item/menu__items
+include ../logo/logo
 
 mixin header(options)
     -
@@ -27,7 +28,9 @@ mixin header(options)
         className = className.split('.').join(' ');
     header.header(class= className)
         .header__wrapper.content
-            .logo.logo__color.logo__title.header__logo
+            +logo({
+                className: ".logo__color.logo__title.header__logo"
+            })
             .header__menu.grid.grid__auto-columns_gap_20
                 ul.menu.menu__wrapper.menu__inline.grid.grid__auto-columns_gap_20
                     for item in menuItems

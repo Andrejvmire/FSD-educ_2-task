@@ -43,7 +43,9 @@ mixin footer__widgets(options)
         .footer__widgets.content.grid
             .block
                 .grid.grid__list.grid__list_gap_12
-                    .logo.logo__color.logo__title.logo__footer
+                    +logo({
+                        className: ".logo__color.logo__title.logo__footer"
+                    })
                     .company.company__description= companyDescription
             for group in groups
                 .block
