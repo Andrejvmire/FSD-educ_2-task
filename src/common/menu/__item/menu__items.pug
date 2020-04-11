@@ -1,0 +1,22 @@
+mixin menu__items(options)
+    -
+        let defaultOptions = {
+                    className: ".menu.menu__item",
+                    currentClassName: '.menu__item_current',
+                    submenu: false,
+                    href: "#"
+                },
+                {className, name, href, current, submenu, currentClassName} = Object.assign(defaultOptions, options);
+        className = (
+                current !== undefined
+                        ?
+                        className + currentClassName
+                        :
+                        className
+        ).split('.').join(' ');
+    li
+        a(class= className href= href)= name
+        if submenu
+            ul.menu.menu__submenu.menu__submenu_hide
+                for item in submenu
+                    +menu__items(item)

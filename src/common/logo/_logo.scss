@@ -7,6 +7,11 @@
   align-items: center;
   align-content: center;
 
+  &__footer {
+    position: relative;
+    top: -4px;
+  }
+
   &__watermark {
     position: absolute;
     top: 30px;

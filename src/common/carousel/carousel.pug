@@ -4,6 +4,6 @@ mixin carousel(options)
     - let defaultOptions = {};
     - let {items} = Object.assign(defaultOptions,options);
 
-    .carousel-container
+    .carousel.carousel-container
         for item in items
             +carousel__item(item)

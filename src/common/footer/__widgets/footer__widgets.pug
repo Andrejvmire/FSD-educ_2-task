@@ -1,62 +1,70 @@
 mixin footer__widgets(options)
-    - let defaultOptions = {};
-    - let {} = Object.assign(defaultOptions, options);
+    -
+        let defaultOptions = {
+            companyDescription: "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.",
+            groups: [
+                {
+                    title: "Navigation", items: [
+                        {name: "about us"},
+                        {name: "news"},
+                        {name: "support"},
+                        {name: "products"},
+                    ]
+                },
+                {
+                    title: "About Us", items: [
+                        {name: "Who we are"},
+                        {name: "Our team"},
+                        {name: "Careers"},
+                        {name: "Investors"},
+                    ]
+                },
+                {
+                    title: "Support", items: [
+                        {name: "Documentation"},
+                        {name: "Community"},
+                        {name: "Get in Touch"}
+                    ]
+                },
+            ],
+            subscription: {
+                title: "Subscribe to our newsletter",
+                className: ".grid.grid__list.grid__list_gap_20",
+                placeholder: "Your email address",
+                description: "Receive our latest news and promotions in your inbox!"
+            },
+            copyright: {
+                text: "Copyright © 2018 Toxin UI Kit. All rights reserved."
+            }
+        };
+        let {companyDescription, groups, subscription, copyright} = Object.assign(defaultOptions, options);
 
     .footer
         .footer__widgets.content.grid
             .block
-                .grid.grid__list.grid__list_gap_20
-                    .logo.logo__color.logo__title
-                    .company.company__description Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+                .grid.grid__list.grid__list_gap_12
+                    +logo({
+                        className: ".logo__color.logo__title.logo__footer"
+                    })
+                    .company.company__description= companyDescription
+            for group in groups
+                .block
+                    +group({
+                        label: group.title,
+                        className: ".grid.grid__list.grid__list_row-gap_25"
+                    })
+                        ul.menu.menu__wrapper.grid.grid__list_gap_25
+                            for item in (group.items)
+                                +menu__items(item)
             .block
                 +group({
-                    label: "Navigation",
-                    className: ".grid.grid__list.grid__list_gap_20"
-                })
-                    ul.menu.menu__wrapper.grid__list_gap_25
-                        li
-                            a.menu.menu__item(href="#") about us
-                        li
-                            a.menu.menu__item(href="#") news
-                        li
-                            a.menu.menu__item(href="#") support
-                        li
-                            a.menu.menu__item(href="#") products
-            .block
-                +group({
-                    label: "About Us",
-                    className: ".grid.grid__list.grid__list_gap_20"
-                })
-                    ul.menu.menu__wrapper.grid__list_gap_25
-                        li
-                            a.menu.menu__item(href="#") Who we are
-                        li
-                            a.menu.menu__item(href="#") Our team
-                        li
-                            a.menu.menu__item(href="#") Careers
-                        li
-                            a.menu.menu__item(href="#") Investors
-            .block
-                +group({
-                    label: "Support",
-                    className: ".grid.grid__list.grid__list_gap_20"
-                })
-                    ul.menu.menu__wrapper.grid__list_gap_25
-                        li
-                            a.menu.menu__item(href="#") Documentation
-                        li
-                            a.menu.menu__item(href="#") Community
-                        li
-                            a.menu.menu__item(href="#") Get in Touch
-            .block
-                +group({
-                    label: "Subscribe to our newsletter",
-                    className: ".grid.grid__list.grid__list_gap_20"
+                    label: subscription.title,
+                    className: subscription.className
                 })
                     .grid.grid__list.grid__list_gap_25
                         .block.block_width_200
-                            .company.company__description Receive our latest news and promotions in your inbox!
+                            .company.company__description= subscription.description
                         +input__text_subscription({
-                            placeholder: "Your email address"
+                            placeholder: subscription.placeholder
                         })
-        +copyright
+        +copyright(copyright)

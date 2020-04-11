@@ -12,6 +12,10 @@
       grid-gap: 10px;
     }
 
+    &_12 {
+      grid-gap: 12px;
+    }
+
     &_15 {
       grid-gap: 15px;
     }
@@ -46,6 +50,11 @@
 
     &_125 {
       grid-gap: 125px;
+    }
+  }
+  &_row-gap {
+    &_25 {
+      grid-row-gap: 25px;
     }
   }
 }

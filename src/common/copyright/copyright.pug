@@ -1,10 +1,10 @@
 mixin copyright(options)
-    - let defaultOptions = {};
-    - let {} = Object.assign(defaultOptions, options);
+    - let defaultOptions = {text: "Copyright © 2018 Toxin UI Kit. All rights reserved."};
+    - let {text} = Object.assign(defaultOptions, options);
 
     .copyright.copyright__wrapper.grid
         .grid.content.copyright__grid
-            .copyright.copyright__text Copyright © 2018 Toxin UI Kit. All rights reserved.
+            .copyright.copyright__text= text
             .copyright.grid.grid__auto-columns.grid__auto-columns_gap_20
                 a.social.social_color_purple(href="#")
                     i.fab.fa-twitter

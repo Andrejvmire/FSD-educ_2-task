@@ -5,7 +5,9 @@ mixin footer__simple(options)
     .footer
         .footer__simple.grid.content.grid__list.grid__list_gap_25
             .grid.grid__list.grid__list_gap_20.grid_width_560.grid_justify_center
-                .logo.logo__color.logo__title
+                +logo({
+                    className: ".logo__color.logo__title.logo__footer"
+                })
                 .company.company__description Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
             .grid.grid__auto-columns.grid__auto-columns_gap_20.grid_width_560.grid_justify_center
                 a.social.social_color_purple(href="#")

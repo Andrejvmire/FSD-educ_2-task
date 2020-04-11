@@ -5,6 +5,8 @@
   @import "./_align/_align";
   @import "./_justify/_justify";
   @import "../block/__width/__width";
+  @import "./_row/_row";
+  @import "./_column/_column";
 
   &__auto-columns {
     grid-auto-flow: column;
@@ -25,6 +27,11 @@
   &__list {
     grid-auto-columns: auto;
     align-content: baseline;
+    @import "./_gap/_gap";
+  }
+
+  &__2-row {
+    grid-template-rows: 1fr 1fr;
     @import "./_gap/_gap";
   }
 }

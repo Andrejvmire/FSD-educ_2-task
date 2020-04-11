@@ -1,2 +1,6 @@
-mixin logo
-    .logo
+mixin logo(options)
+    -
+        let defaultOptions = {className: ''};
+        let {className} = Object.assign(defaultOptions, options);
+        className = className.split('.').join(' ');
+    a(href= "/" class= className).logo
