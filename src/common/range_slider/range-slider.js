@@ -8,7 +8,8 @@ const rangeSlider = options => {
         let dataset = $(this)[0].dataset;
         let {value} = dataset;
         let {min, max, from, to} = JSON.parse(value);
-        let comment = $('#' + dataset.comment_id);
+        let comment_id = dataset.comment_id.split('.').join(' ').trim();
+        let comment = $(`#${comment_id}`);
         let slider = $(this).slider({
             ...dataset,
             min,

@@ -1,6 +1,8 @@
 extends ./layout/layout
 include ../common/page/page
 include ../common/fieldset/fieldset
+include ../common/range_slider/range_slider
+include ../common/checkbox/checkbox
 append main
     .content.background.background_color_white
         +page({
@@ -9,11 +11,72 @@ append main
             .grid.grid__auto-columns.grid__auto-columns_gap_60
                 .block.block_width_266
                     form
-                        .grid.grid__list.grid__list_gap_20
+                        .grid.grid__list.grid__list_gap_30
+                            .grid.grid__list.grid__list_gap_20
+                                +group({
+                                    label: "Даты пребывания в отеле"
+                                })
+                                    +fieldset__dropdown({
+                                        value: "19 авг - 23 авг",
+                                        datePicker: true,
+                                        range: 1,
+                                        date_format: "d M",
+                                        name: "date_range"
+                                    })
+                                +group({
+                                    label: "Гости"
+                                })
+                                    +fieldset__dropdown({
+                                        name: "guests",
+                                        value: "3 гостя, 1 младенец"
+                                    })
                             +group({
-                                label: "Даты пребывания в отеле"
+                                label: "Диапазон цены",
+                                comment_id: '.room_price_range',
+                                className: ".grid.grid__list.grid__list_gap_20"
+                            })
+                                .grid.grid__list.grid__list_gap_15
+                                    +range_slider({
+                                        type: "double",
+                                        value: {
+                                            from: 3000,
+                                            to: 5000,
+                                            min: 1280,
+                                            max: 14870
+                                        },
+                                        comment_id: ".room_price_range"
+                                    })
+                                    p.comment.comment_color_dark50.comment_font-size_12 Стоимость за сутки пребывания в номере
+                            +group({
+                                label: "Checkbox buttons",
+                                className: ".grid.grid__list.grid__list_gap_15"
+                            })
+                                .grid.grid__list.grid__list_gap_10
+                                    +checkbox({label: "Можно курить"})
+                                    +checkbox({label: "Можно с питомцами", checked: true})
+                                    +checkbox({label: "Можно пригласить гостей (до 10 человек)", checked: true})
+                            +group({
+                                label: "Доступность",
+                                className: ".grid.grid__list.grid__list_gap_15"
+                            })
+                                .grid.grid__list.grid__list_gap_15
+                                    +checkbox({
+                                        label: "Широкий коридор",
+                                        subscription: "Ширина коридора в номере не менее 91 см."
+                                    })
+                                    +checkbox({
+                                        label: "Помощник для инвалидов",
+                                        subscription: "На 1 этаже вас встретит специалист и проводит до номера."
+                                    })
+                            +group({
+                                label: "Удобства номера"
                             })
                                 +fieldset__dropdown({
-                                    value: "19 авг - 23 авг",
-                                    className: 'datepicker-container'
+                                    value: "2 спальни, 2 кровати, ...",
+                                    id: "bedroom1"
+                                })
+                            +group()
+                                +checkbox-expandable({
+                                    value: "Дополнительные удобства",
+                                    id: "expand1"
                                 })
