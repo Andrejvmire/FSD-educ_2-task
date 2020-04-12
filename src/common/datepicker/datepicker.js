@@ -1,23 +1,32 @@
 import datepicker from 'air-datepicker';
 
-let calendar = $('.datepicker-container').datepicker({
+const defaultOptions = () => ({
     classes: "block block_width_320",
-    offset: 0,
-    multipleDateSeparator: ' - ',
-    range: true,
+    multipleDatesSeparator: ' - ',
     navTitles: {
         days: 'MM yyyy'
     },
+    minDate: new Date(),
     prevHtml: `<span class="datepicker__arrow">arrow_back</span>`,
     nextHtml: `<span class="datepicker__arrow">arrow_forward</span>`,
     selectOtherMonths: false,
+    language: {
+        monthsShort: ['янв', 'фев', 'мар', 'апр', 'май', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
+    }
 });
 
-calendar = calendar.data('datepicker');
 const parse = (object) => {
     if (object === undefined) return;
-    let {$el, $nav, $content, $buttons} = object;
-    $el.find('.datepicker--buttons')
+    let {$datepicker} = object;
+    let btnWrapper = $datepicker.find('.datepicker--buttons');
+    if (!btnWrapper.length) {
+        btnWrapper = $datepicker
+            .append(
+                $(document.createElement("div"))
+                    .addClass('.datepicker--buttons')
+            )
+    }
+    btnWrapper
         .append(
             $(document.createElement('span'))
                 .addClass('datepicker--button')
@@ -26,4 +35,11 @@ const parse = (object) => {
         );
 }
 
-parse(calendar);
+const calendar = () => {
+    $('.datepicker-container').each(function () {
+        let item = $(this).datepicker(defaultOptions()).data('datepicker');
+        parse(item);
+    })
+}
+
+calendar();
