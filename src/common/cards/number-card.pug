@@ -5,7 +5,10 @@ mixin number-card(options)
     - let {items, number, type, price, stars, votes} = Object.assign(defaultOptions, options);
     figure.room.room__figure
         .room.room__image
-            +carousel({items})
+            +carousel({
+                className: "carousel__static",
+                items
+            })
         figcaption.grid.grid__list.grid__list_gap_10.room.room__figcaption
             .room.room__header.grid
                 h2.room.room__number.number= number
