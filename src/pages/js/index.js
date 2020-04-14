@@ -1,4 +1,5 @@
 import carousel from "../../common/carousel/carousel";
+import {uniformChoice} from "../../common/fieldset/__iqdropdown/iqdropdown";
 
 carousel('.carousel',{
     autoplay: true,
@@ -7,3 +8,5 @@ carousel('.carousel',{
     pauseOnHover: false,
     speed: 1500
 })
+
+uniformChoice('searchRoom2');
