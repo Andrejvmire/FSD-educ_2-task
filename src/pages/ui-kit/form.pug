@@ -35,9 +35,27 @@ include ../../common/feedback/feedback
                             +group({
                                 label: "Dropdown"
                             })
-                                +fieldset__dropdown({
-                                    value: "Сколько гостей"
+                                +fieldset__iqdropdown({
+                                    id: 'drop11',
+                                    placeholder: "Сколько гостей",
+                                    selectionText: "гость",
+                                    textPlural: "гостей"
                                 })
+
+                            +group({
+                                label: "Dropdown"
+                            })
+                                +fieldset__iqdropdown({
+                                    id: 'drop12',
+                                    placeholder: "Сколько гостей",
+                                    selectionText: "гость",
+                                    textPlural: "гостей",
+                                    items: [
+                                        "Взрослые", "Дети", "Младенцы"
+                                    ]
+                                })
+
+
                             +group({
                                 label: "Masked text field"
                             })
@@ -183,35 +201,55 @@ include ../../common/feedback/feedback
                                 +group({
                                     label: "dropdown"
                                 })
-                                    +fieldset__dropdown({
-                                        value: "2 спальни, 2 кровати, ...",
-                                        id: "bedroom1"
+                                    +fieldset__iqdropdown({
+                                        id: 'drop13',
+                                        placeholder: "",
+                                        selectionText: "гость",
+                                        textPlural: "гостей",
+                                        items: [
+                                            "спальни", "кравати", "ванные комнаты"
+                                        ]
                                     })
                             .block.block_width_266
                                 +group({
                                     label: "dropdown"
                                 })
-                                    +fieldset__dropdown({
-                                        value: "2 спальни, 2 кровати, ...",
-                                        id: "bedroom2"
+                                    +fieldset__iqdropdown({
+                                        id: 'drop14',
+                                        placeholder: "",
+                                        selectionText: "",
+                                        textPlural: "",
+                                        items: [
+                                            "спальни", "кравати", "ванные комнаты"
+                                        ]
                                     })
                         .grid.grid__list
                             .block.block_width_320
                                 +group({
                                     label: "dropdown"
                                 })
-                                    +fieldset__dropdown({
-                                        value: "Сколько гостей",
-                                        id: "guests1"
+                                    +fieldset__iqdropdown({
+                                        id: 'drop15',
+                                        placeholder: "Сколько гостей",
+                                        selectionText: "гость",
+                                        textPlural: "гостей",
+                                        items: [
+                                            "Взрослые", "Дети", "Младенцы"
+                                        ]
                                     })
                         .grid.grid__list
                             .block.block_width_320
                                 +group({
                                     label: "dropdown"
                                 })
-                                    +fieldset__dropdown({
-                                        value: "Сколько гостей",
-                                        id: "guests2"
+                                    +fieldset__iqdropdown({
+                                        id: 'drop16',
+                                        placeholder: "Сколько гостей",
+                                        selectionText: "гость",
+                                        textPlural: "гостей",
+                                        items: [
+                                            "Взрослые", "Дети", "Младенцы"
+                                        ]
                                     })
                     .grid.grid__3-columns.grid__3-columns_gap_125
                         .blocl.block_width_266

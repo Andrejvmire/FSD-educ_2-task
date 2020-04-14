@@ -9,3 +9,7 @@
   @import "./__button/__button";
   @import "./__title/__title";
 }
+
+.menu-open .fieldset__content {
+  --show: block;
+}

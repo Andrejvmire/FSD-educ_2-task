@@ -1,0 +1,16 @@
+mixin fieldset__iqdropdown(options)
+    -
+        let defaultOptions = {items: [], placeholder: ''};
+        let {id, selectionText, textPlural, placeholder, items} = Object.assign(defaultOptions, options);
+
+    .iqdropdown.fieldset.fieldset__dropdown.testiq(id= id)
+        .fieldset__label.fieldset__bordered.fieldset__header
+            p.iqdropdown-selection(data-selection-text= selectionText data-text-plural= textPlural data-placeholder= placeholder)
+        .fieldset__content.fieldset__content_with_border
+            +list({
+                className: ".iqdropdown-menu"
+            })
+                each item in items
+                    +item({
+                        text: item
+                    })

@@ -2,7 +2,7 @@
   &__content {
     @import "_show/_show";
 
-    display: none;
+    display: var(--show, none);
 
     &_with_border {
       position: absolute;

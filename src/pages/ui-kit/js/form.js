@@ -2,39 +2,9 @@ import renderList from "../../../common/list/list";
 import renderItem from "../../../common/item/item";
 import renderCheckbox from "../../../common/checkbox/renderCheckbox";
 import Paginator from "../../../common/pagination/pagination";
+import iqDropdown from "item-quantity-dropdown/lib/item-quantity-dropdown.min";
+import {uniformChoice, multiChoice} from "../../../common/fieldset/__iqdropdown/iqdropdown";
 
-let bedRoomResponse = (options) => ({
-    response: [
-        {
-            name: "спальни", count: 2, id: 1
-        },
-        {
-            name: "кровати", count: 2, id: 2
-        },
-        {
-            name: "ванные комнаты", count: 0, id: 3
-        }
-    ]
-});
-renderList({id: 'bedroom2'}, bedRoomResponse(), renderItem);
-
-let guestsResponse = (options) => ({
-    response: [
-        {
-            name: "Взрослые"
-        },
-        {
-            name: "Дети"
-        },
-        {
-            name: "Младенцы"
-        }
-    ]
-});
-
-renderList({id: "guests1", buttons: true}, guestsResponse(), renderItem);
-
-renderList({id: "guests2", buttons: true, clearHide: false}, guestsResponse(), renderItem);
 
 let checkbox_list = (options) => ({
     response: [
@@ -81,5 +51,11 @@ Paginator({
         }
         done(result);
     }
-},
-    data => console.log(data));
+});
+
+uniformChoice("drop11");
+uniformChoice('drop12');
+multiChoice('drop13');
+multiChoice('drop14');
+uniformChoice('drop15');
+uniformChoice('drop16');
