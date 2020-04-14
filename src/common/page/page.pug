@@ -1,4 +1,8 @@
 
-mixin page
-    .page
+mixin page(options)
+    -
+        let defaultOptions = {className: ""}
+        let {className} = Object.assign(defaultOptions, options);
+        className = className.split('.').join(' ');
+    .page(class= className)
         block

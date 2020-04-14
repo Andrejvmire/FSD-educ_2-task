@@ -11,4 +11,5 @@ import('./src/common/rate/rate');
 
 import("./src/pages/ui-kit/js/form");
 import("./src/pages/js/index");
+import("./src/pages/js/search");
 import("./src/pages/ui-kit/js/cards");

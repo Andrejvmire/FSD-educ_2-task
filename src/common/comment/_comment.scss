@@ -1,0 +1,13 @@
+.comment {
+  &_color {
+    &_dark50 {
+      color: $dark50;
+    }
+  }
+
+  &_font-size {
+    &_12 {
+      font-size: 12px;
+    }
+  }
+}
