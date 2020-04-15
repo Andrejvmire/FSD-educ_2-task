@@ -10,8 +10,13 @@
 
   &__auto-columns {
     grid-auto-flow: column;
+
     grid-auto-columns: max-content;
     @import "./_gap/_gap";
+  }
+
+  &__auto-row {
+
   }
 
   &__2-columns {
@@ -20,7 +25,7 @@
   }
 
   &__3-columns {
-    grid-template-columns: 320px 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     @import "./_gap/_gap";
   }
 
