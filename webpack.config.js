@@ -76,10 +76,6 @@ module.exports = {
             filename: Path.join(__dirname, "dist", "search.html")
         }),
         new HtmlWebpackPlugin({
-            template: Path.join(__dirname,"src", "pages", "signin.pug"),
-            filename: Path.join(__dirname, "dist", "signin.html")
-        }),
-        new HtmlWebpackPlugin({
             template: Path.join(__dirname, "src", "pages", "ui-kit", "colors.pug"),
             filename: Path.join(__dirname, "dist", "colors.html")
         }),
