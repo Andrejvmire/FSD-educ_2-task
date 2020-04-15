@@ -2,13 +2,14 @@ import pagination from 'paginationjs';
 
 const Paginator = defaultOptions => {
     return (options = {}, callback = undefined) => {
-        let {id, style, displayControl, dataSource, customizeText} = Object.assign(defaultOptions, options);
+        let {id, style, displayControl, dataSource, customizeText, pageSize} = Object.assign(defaultOptions, options);
         let $id = $(`#${id}`);
         if ($id.length === 0) return;
         $id.pagination({
             ...style,
             ...displayControl,
             ...customizeText,
+            pageSize,
             dataSource,
             callback
         })

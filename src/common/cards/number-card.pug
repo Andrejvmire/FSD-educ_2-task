@@ -1,23 +1,24 @@
 include ../carousel/carousel
 
 mixin number-card(options)
-    - let defaultOptions = {stars: 0, votes: 0};
-    - let {items, number, type, price, stars, votes} = Object.assign(defaultOptions, options);
-    figure.room.room__figure
-        .room.room__image
-            +carousel({
-                className: "carousel__static",
-                items
-            })
-        figcaption.grid.grid__list.grid__list_gap_10.room.room__figcaption
-            .room.room__header.grid
-                h2.room.room__number.number= number
-                .room.room__type= type
-                .room.room__price
-                    span.room.room__multiplicity
-                        span.currency.currency__ru(data-price= price) 9 990
-                        span.room.room__downsize в сутки
-            .room.room__delimiter.grid
-            .room.room__feedback.grid
-                .room.room__rate.rate(data-stars= stars)
-                .room.room__votes.votes(data-votes= votes data-postfix= "Отзывов")
+    - let defaultOptions = {stars: 0, votes: 0, href: "#"};
+    - let {items, number, type, price, stars, votes, href} = Object.assign(defaultOptions, options);
+    a(href= href)
+        figure.room.room__figure
+            .room.room__image
+                +carousel({
+                    className: "carousel__static",
+                    items
+                })
+            figcaption.grid.grid__list.grid__list_gap_10.room.room__figcaption
+                .room.room__header.grid
+                    h2.room.room__number.number= number
+                    .room.room__type= type
+                    .room.room__price
+                        span.room.room__multiplicity
+                            span.currency.currency__ru(data-price= price) 9 990
+                            span.room.room__downsize в сутки
+                .room.room__delimiter.grid
+                .room.room__feedback.grid
+                    .room.room__rate.rate(data-stars= stars)
+                    .room.room__votes.votes(data-votes= votes data-postfix= "Отзывов")

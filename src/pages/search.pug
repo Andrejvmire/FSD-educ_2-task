@@ -104,12 +104,13 @@ append main
                                                 {src: require("../img/carousel_1.png")},
                                                 {src: require("../img/carousel_1.png")},
                                                 {src: require("../img/carousel_1.png")},
-                                            ]
+                                            ],
+                                            href: "?id=888"
                                         }
                                 )
 
                             each item in items
-                                - let {number, type, price, stars, votes, items} = item;
+                                - let {number, type, price, stars, votes, items, href} = item;
                                 .block.block_width_270
                                     +number-card({
                                         number: number,
@@ -117,7 +118,8 @@ append main
                                         price: price,
                                         stars: stars,
                                         votes: votes,
-                                        items: items
+                                        items: items,
+                                        href: href
                                     })
                     .grid.grid_justify_center
                         +pagination({
