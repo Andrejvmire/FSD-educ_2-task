@@ -1,7 +1,7 @@
 include ../fieldset/fieldset
 
 mixin room-filter-card(options)
-    - let {title, href} = options;
+    - let {title, href, iqdropdown_id} = options;
     form(action= href).card
         .grid.grid__list.grid__list_gap_20
             h1= title
@@ -21,8 +21,14 @@ mixin room-filter-card(options)
             +group({
                 label: "Гости"
             })
-                +fieldset__dropdown({
-                    value: "Сколько гостей"
+                +fieldset__iqdropdown({
+                    id: iqdropdown_id,
+                    placeholder: "Сколько гостей",
+                    selectionText: "гость",
+                    textPlural: "гостей",
+                    items: [
+                        "Взрослые", "Дети", "Младенцы"
+                    ]
                 })
             +group({})
                 button.button.button_width_big.button_type_bordered.button_type_filled.button__arrow-forward.button_fat подобрать номер

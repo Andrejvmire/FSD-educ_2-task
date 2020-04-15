@@ -1,9 +1,9 @@
 include ./__item/carousel__item
 
 mixin carousel(options)
-    - let defaultOptions = {};
-    - let {items} = Object.assign(defaultOptions,options);
+    - let defaultOptions = {className: '', id: ""};
+    - let {items, id, className} = Object.assign(defaultOptions,options);
 
-    .carousel.carousel-container
+    .carousel.carousel-container(class= className id= id)
         for item in items
             +carousel__item(item)

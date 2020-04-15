@@ -1,5 +1,6 @@
 @if (&) {
   &__label {
+    grid-area: label;
     align-self: center;
     cursor: pointer;
 
@@ -7,6 +8,13 @@
       @extend %input-hover;
       border-bottom-left-radius: 0 !important;
       border-bottom-right-radius: 0 !important;
+    }
+
+    &:after {
+      content: 'expand_more';
+      @extend %icon;
+      @extend %icon__button;
+      grid-area: button;
     }
   }
 }

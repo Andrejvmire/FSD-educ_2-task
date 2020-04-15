@@ -3,6 +3,6 @@ mixin list(options)
     - let {items, className} = Object.assign(defaultOptions, options)
     - className = className.split('.').join(' ');
 
-    ul.list(class= className)
+    .list(class= className)
         if block
             block
