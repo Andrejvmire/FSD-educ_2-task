@@ -26,9 +26,14 @@ append main
                                 +group({
                                     label: "Гости"
                                 })
-                                    +fieldset__dropdown({
-                                        name: "guests",
-                                        value: "3 гостя, 1 младенец"
+                                    +fieldset__iqdropdown({
+                                        id: 'formSearch22',
+                                        placeholder: "Сколько гостей",
+                                        selectionText: "гость",
+                                        textPlural: "гостей",
+                                        items: [
+                                            "взрослые", "младенцы", "дети"
+                                        ]
                                     })
                             +group({
                                 label: "Диапазон цены",
@@ -71,12 +76,50 @@ append main
                             +group({
                                 label: "Удобства номера"
                             })
-                                +fieldset__dropdown({
-                                    value: "2 спальни, 2 кровати, ...",
-                                    id: "bedroom1"
+                                +fieldset__iqdropdown({
+                                    id: 'formSearch23',
+                                    items: [
+                                        "спальни", "кровати", "ванные комнаты"
+                                    ]
                                 })
                             +group()
                                 +checkbox-expandable({
                                     value: "Дополнительные удобства",
                                     id: "expand1"
                                 })
+                .grid.grid__list.grid__list_gap_40
+                    .grid.grid__list.grid__list_gap_20
+                        h1 Номера, которые мы для вас подобрали
+                        .grid.grid__3-columns.grid__3-columns_gap_12.grid__3-columns_row-gap_22
+                            -
+                                let items = Array(12).fill(
+                                        {
+                                            number: 888,
+                                            type: 'Люкс',
+                                            price: 9990,
+                                            stars: 5,
+                                            votes: 145,
+                                            items: [
+                                                {src: require("../img/carousel_1.png")},
+                                                {src: require("../img/carousel_1.png")},
+                                                {src: require("../img/carousel_1.png")},
+                                                {src: require("../img/carousel_1.png")},
+                                            ]
+                                        }
+                                )
+
+                            each item in items
+                                - let {number, type, price, stars, votes, items} = item;
+                                .block.block_width_270
+                                    +number-card({
+                                        number: number,
+                                        type: type,
+                                        price: price,
+                                        stars: stars,
+                                        votes: votes,
+                                        items: items
+                                    })
+                    .grid.grid_justify_center
+                        +pagination({
+                            id: 'pagination21'
+                        })
