@@ -12,8 +12,12 @@ html
             block main
                 +header({
                     className: '.header_center',
-                    registerButtonName: "Зарегестрироваться",
-                    loginButtonName: "Войти",
+                    registerButton: {
+                        name: "Зарегестрироваться"
+                    },
+                    loginButton: {
+                        name: "Войти"
+                    },
                     menuItems: [
                         {name: "О нас"},
                         {
