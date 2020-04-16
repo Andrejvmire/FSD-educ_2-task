@@ -1,5 +1,6 @@
 .footer {
   background-color: $white;
+  box-shadow: 0 0 0 1px $dark10;
 
   &__widgets {
     grid-template-columns: 260px repeat(3, 1fr) 260px;

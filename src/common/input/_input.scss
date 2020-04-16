@@ -197,7 +197,8 @@
 }
 
 input[type='text'],
-input[type='email'] {
+input[type='email'],
+input[type='password'] {
   @extend %input;
   padding: 13px 15px;
 

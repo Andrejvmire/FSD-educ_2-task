@@ -1,0 +1,10 @@
+@if(&) {
+  &__height {
+    &_900 {
+      height: 900px - $header__wrapper_height;
+    }
+    &_753 {
+      height: 753px - $header__wrapper_height;
+    }
+  }
+}

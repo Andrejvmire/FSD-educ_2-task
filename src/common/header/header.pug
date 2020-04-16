@@ -6,8 +6,14 @@ mixin header(options)
         let defaultOptions = {
             auth: false,
             className: '',
-            loginButtonName: "Login",
-            registerButtonName: "Register",
+            loginButton: {
+                name: "Login",
+                href: '/signin.html'
+            },
+            registerButton: {
+                name: "Register",
+                href: '/registration.html'
+            },
             menuItems: [
                 {name: "home", href: "#", current: true},
                 {name: "about us", href: "#"},
@@ -24,7 +30,7 @@ mixin header(options)
             ]
         };
     -
-        let {auth, username, loginButtonName, registerButtonName, menuItems, className} = Object.assign(defaultOptions, options);
+        let {auth, username, loginButton, registerButton, menuItems, className} = Object.assign(defaultOptions, options);
         className = className.split('.').join(' ');
     header.header(class= className)
         .header__wrapper.content
@@ -39,5 +45,5 @@ mixin header(options)
                     if (auth)
                         .header__user= username
                     else
-                        button.button.button_type_bordered.button_fit= loginButtonName
-                        button.button.button_type_filled.button_fit= registerButtonName
+                        a(href= loginButton.href).button.button_type_bordered.button_fit= loginButton.name
+                        a(href= registerButton.href).button.button_type_filled.button_fit= registerButton.name
