@@ -1,10 +1,10 @@
 include ../input/__text/__text
 
 mixin login-card(options)
-    - let defaultOptions = {};
-    - let {} = Object.assign(defaultOptions, options);
+    - let defaultOptions = {confirmButtonName: "перейта к оплате", registrationHref: "#"};
+    - let {confirmButtonName, registrationHref} = Object.assign(defaultOptions, options);
 
-    form.card
+    form(method= "POST").card
         .grid.grid__list.grid__list_gap_20
             h1 Войти
             +group({
@@ -17,10 +17,11 @@ mixin login-card(options)
                 })
                 +input__text({
                     placeholder: 'Пароль',
-                    name: 'password'
+                    name: 'password',
+                    type: "password"
                 })
             .grid.grid__list.grid__list_gap_30
-                button.button.button_width_big.button_type_bordered.button_type_filled.button__arrow-forward.button_fat перейти к оплате
+                button.button.button_width_big.button_type_bordered.button_type_filled.button__arrow-forward.button_fat= confirmButtonName
                 .grid.grid__auto-columns.grid_align_center.grid_justify_space-between
                     label Нет аккаунта на Toxin?
-                    a.button.button_type_bordered.button_width_small.button_fat Создать
+                    a.button.button_type_bordered.button_width_small.button_fat(href= registrationHref) Создать

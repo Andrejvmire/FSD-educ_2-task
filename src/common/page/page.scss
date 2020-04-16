@@ -1,9 +1,14 @@
 .page {
-  padding-top: 140px;
+  padding-top: 70px;
 
-  &_padding {
+  &_padding-top {
     &_100 {
       padding-top: 100px;
+    }
+  }
+  &_padding-bottom {
+    &_85 {
+      padding-bottom: 85px;
     }
   }
 }
