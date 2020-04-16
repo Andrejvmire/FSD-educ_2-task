@@ -1,8 +1,8 @@
 mixin register-card(options)
-    - let defaultOptions = {};
-    - let {title} = Object.assign(defaultOptions, options);
+    - let defaultOptions = {confirmButtonName: "Перейти к оплате", signInHref: '/signin.html'};
+    - let {title, confirmButtonName, signInHref} = Object.assign(defaultOptions, options);
 
-    form.card
+    form(method= "POST").card
         .grid.grid__list.grid__list_gap_20
             h1= title
             +group({
@@ -18,7 +18,7 @@ mixin register-card(options)
                         name: "surname"
                     })
                     .grid.grid__auto-columns.grid__auto-columns_gap_20
-                        +checkbox({label: "Мужчина", type: "radio", name: "gender", checked: true, value: "male"})
+                        +checkbox({label: "Мужчина", type: "radio", name: "gender", value: "male"})
                         +checkbox({label: "Женщина", type: "radio", name: "gender", value: "female"})
             +group({
                 label: "Дата рождения"
@@ -27,7 +27,8 @@ mixin register-card(options)
                     placeholder: "ДД.ММ.ГГГГ",
                     className: "datepicker-container",
                     name: "bdate",
-                    range: 0
+                    range: 0,
+                    min_date: '',
                 })
             +group({
                 label: "Данные для входа в сервис"
@@ -39,7 +40,8 @@ mixin register-card(options)
                     })
                     +input__text({
                         placeholder: "Пароль",
-                        name: "password"
+                        name: "password",
+                        type: 'password'
                     })
                     +checkbox({
                         className: "switch",
@@ -47,7 +49,7 @@ mixin register-card(options)
                         name: "subscription"
                     })
             .grid.grid__list.grid__list_gap_30
-                button.button.button_width_big.button_type_bordered.button_type_filled.button__arrow-forward.button_fat перейти к оплате
+                button.button.button_width_big.button_type_bordered.button_type_filled.button__arrow-forward.button_fat= confirmButtonName
                 .grid.grid__auto-columns.grid_justify_space-between.grid_align_center
                     label Уже есть аккаунт на Toxin
-                    a.button.button_type_bordered.button_width_small.button_fat Войти
+                    a.button.button_type_bordered.button_width_small.button_fat(href= signInHref) Войти
