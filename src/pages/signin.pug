@@ -1,14 +1,15 @@
 extends ./layout/layout
 include ../common/login/login-card
+include ../common/login/register-card
 
 append main
     .carousel.carousel__background
         img(src= require("../img/image.png").default)
         img(src= require("../img/image 2.png").default)
-
-    .grid.grid_align_center.grid_justify_center.grid__height_753
-        .block.block_width_380
-            +login-card({
-                registrationHref: "/registration",
-                confirmButtonName: "войти"
-            })
+    block form
+        .grid.grid_align_center.grid_justify_center.grid__height_753
+            .block.block_width_380
+                +login-card({
+                    registrationHref: "/registration",
+                    confirmButtonName: "войти"
+                })
