@@ -1,0 +1,12 @@
+extends ./layout/layout
+
+append main
+    .content
+        .grid.grid__2-columns
+            img(src= require("../img/888/image.png").default)
+            .grid.grid__list
+                img(src= require("../img/888/image2.png").default)
+                img(src= require("../img/888/image3.png").default)
+    +page
+        .content.content_padding
+            h1 hello world

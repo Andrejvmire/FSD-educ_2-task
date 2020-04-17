@@ -51,7 +51,7 @@ module.exports = {
                 use: {
                     loader: "file-loader",
                     options: {
-                        name: "img/[name].[ext]"
+                        name: "img/[hash].[ext]"
                     }
                 }
             },
@@ -82,6 +82,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: Path.join(__dirname,"src", "pages", "registration.pug"),
             filename: Path.join(__dirname, "dist", "registration.html")
+        }),
+        new HtmlWebpackPlugin({
+            template: Path.join(__dirname,"src", "pages", "detail.pug"),
+            filename: Path.join(__dirname, "dist", "detail.html")
         }),
         new HtmlWebpackPlugin({
             template: Path.join(__dirname, "src", "pages", "ui-kit", "colors.pug"),
