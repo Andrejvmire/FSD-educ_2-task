@@ -33,7 +33,7 @@ mixin header(options)
         let {auth, username, loginButton, registerButton, menuItems, className} = Object.assign(defaultOptions, options);
         className = className.split('.').join(' ');
     header.header(class= className)
-        .header__wrapper.content
+        .header__wrapper.content.content_padding
             +logo({
                 className: ".logo__color.logo__title.header__logo"
             })
