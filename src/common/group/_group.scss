@@ -8,29 +8,3 @@
   grid-template-areas: "title comment" "content content";
   grid-template-columns: 1fr minmax(0, max-content);
 }
-
-//todo: deprecate
-%group {
-  color: red;
-
-  &_full {
-    width: 320px;
-  }
-
-  &_half {
-    width: 150px;
-  }
-
-  &_middle {
-    width: 266px;
-  }
-
-  &__title {
-
-  }
-
-
-  &__content {
-    grid-area: content;
-  }
-}

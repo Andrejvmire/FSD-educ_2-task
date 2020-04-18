@@ -1,13 +1,16 @@
 mixin group(options)
     -
         let defaultOptions = {className: "grid grid__list grid__list_gap_6", comment_id: ''};
-        let {label, comment, className, comment_id} = Object.assign(defaultOptions, options);
+        let {label, comment, className, comment_id, title} = Object.assign(defaultOptions, options);
         className = className.split(".").join(' ').trim();
         comment_id = comment_id.split('.').join(' ').trim();
 
     if block
         .group(class= className)
-            label.group__label= label
+            if title === undefined
+                label.group__label.group__label_h3= label
+            else
+                label.group__label.group__label_h2= title
             label.group__comment(id= comment_id)= comment
             .group__content
                 block

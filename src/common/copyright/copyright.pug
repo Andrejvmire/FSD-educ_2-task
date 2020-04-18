@@ -3,7 +3,7 @@ mixin copyright(options)
     - let {text} = Object.assign(defaultOptions, options);
 
     .copyright.copyright__wrapper.grid
-        .grid.content.copyright__grid
+        .grid.content.copyright__grid.content_padding
             .copyright.copyright__text= text
             .copyright.grid.grid__auto-columns.grid__auto-columns_gap_20
                 a.social.social_color_purple(href="#")
