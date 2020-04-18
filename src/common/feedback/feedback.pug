@@ -1,5 +1,5 @@
 mixin feedback(options)
-    - let {name, count, src, username, date, text} = options;
+    - let {name, count, src, username, date, text, like} = options;
     .feedback.feedback__container
         .feedback.feedback__user
             img.feedback.feedback__photo(src= src.default)
@@ -8,7 +8,7 @@ mixin feedback(options)
         .feedback.feedback__comment
             .feedback.feedback__like
                 +checkbox({
-                    checked: true,
+                    checked: like,
                     className: '.like',
                     count,
                     name

@@ -1,5 +1,6 @@
 mixin room-card(options)
-    - let {number, type, price, date, iqdropdown_id} = options;
+    - let defaultOptions = {date: {}}
+    - let {number, type, price, date, iqdropdown_id} = Object.assign(defaultOptions, options);
     - let {check_in, check_out} = date;
     form.card.room.room__card.grid.grid__list.grid__list_gap_20
         .room.room__header.grid
@@ -16,14 +17,16 @@ mixin room-card(options)
                     className: ".grid.grid__list.grid__list_gap_6"
                 })
                     +fieldset__dropdown({
-                        value: check_in
+                        value: check_in,
+                        datePicker: true
                     })
                 +group({
                     label: 'Выезд',
                     className: ".grid.grid__list.grid__list_gap_6"
                 })
                     +fieldset__dropdown({
-                        value: check_out
+                        value: check_out,
+                        datePicker: true
                     })
             +group({
                 label: 'Гости',
