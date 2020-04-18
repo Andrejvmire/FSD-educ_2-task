@@ -51,9 +51,9 @@ mixin footer__widgets(options)
                 .block
                     +group({
                         label: group.title,
-                        className: ".grid.grid__list.grid__list_row-gap_25"
+                        className: ".grid.grid__list.grid__list_row-gap_18"
                     })
-                        ul.menu.menu__wrapper.grid.grid__list_gap_25
+                        ul.menu.menu__wrapper.grid.grid__list_gap_18
                             for item in (group.items)
                                 +menu__items(item)
             .block
