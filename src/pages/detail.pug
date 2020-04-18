@@ -1,0 +1,87 @@
+extends ./layout/layout
+include ../common/feedback/feedback
+include ../common/cards/room-card
+
+append main
+    .content
+        .grid.grid__2-columns
+            img(src= require("../img/888/image.png").default)
+            .grid.grid__list
+                img(src= require("../img/888/image2.png").default)
+                img(src= require("../img/888/image3.png").default)
+    +page({
+        className: ".page_padding-bottom_80"
+    })
+        .content.content_padding
+            .grid.grid__2-columns.grid__2-columns_gap_70
+                .grid.grid__list.grid_width_712.grid__list_gap_35
+                    .grid.grid__auto-columns.grid__auto-columns_gap_80
+                        +group({
+                            title: "Сведения о номере",
+                            className: ".grid.grid__list.grid__list_gap_20.grid_width_280"
+                        })
+                            +list({className: ".grid.grid__list.grid__list_gap_20"})
+                                li.item.item__icon.item__icon_color_purple(data-image="insert_emoticon")
+                                    span.item__title Комфорт
+                                    span.item__description Шумопоглащающие стены
+                                li.item.item__icon.item__icon_color_purple(data-image="location_city")
+                                    span.item__title Удобство
+                                    span.item__description Окно в каждой из спален
+                                li.item.item__icon.item__icon_color_purple(data-image="whatshot")
+                                    span.item__title Уют
+                                    span.item__description Номер оснащен камином
+                        +group({
+                            title: "Впечатления от номера",
+                            className: '.grid.grid__list.grid__list_gap_20'
+                        })
+                            h1 здесь будет pie
+                    +group({
+                        title: "Отзывы посетителей номера",
+                        comment: "2 отзыва",
+                        className: ".grid.grid__list.grid__list_gap_20"
+                    })
+                        .grid.grid__list.grid__list_gap_20
+                            +feedback({
+                                name: 'feed_from_sarafan',
+                                like: 1,
+                                count: 12,
+                                username: "Мурад Сарафанов",
+                                date: "5 дней назад",
+                                src: require("../common/feedback/img/murad.png"),
+                                text: `Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.
+                                                                 И стены, действительно, шумоподавляющие.
+                                                                 Выкрикивал комплименты повару &mdash; никто не жаловался из соседей`
+                            })
+                            +feedback({
+                                name: 'feed_from_glass',
+                                count: 2,
+                                username: "Патрисия Стёклышкова",
+                                date: "Неделю назад",
+                                src: require("../common/feedback/img/glass.png"),
+                                text: `Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать,
+                                    каждый день новое блюдо и десерт как комплимент`
+                            })
+                    .grid.grid__auto-columns.grid__auto-columns_gap_90
+                        .grid.grid_width_270
+                            +group({
+                                title: "Правила",
+                                className: ".grid.grid__list.grid__list_gap_20"
+                            })
+                                ul.list
+                                    li.bullet.bullet__item Нельзя с питомцами
+                                    li.bullet.bullet__item Без вечеринок и мероприятий
+                                    li.bullet.bullet__item Время прибытия &mdash; после 13:00, а выезд до 12:00
+                        .grid.grid_width_340
+                            +group({
+                                title: "Отмена",
+                                className: ".grid.grid__list.grid__list_gap_20"
+                            })
+                                p(style= {"line-height": "24px"}) Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+                .block.block_width_380
+                    +room-card({
+                        number: 888,
+                        type: "Люкс",
+                        price: 9990,
+                        date: {},
+                        iqdropdown_id: "guests333"
+                    })
