@@ -1,0 +1,22 @@
+.chart {
+  &__wrapper {
+    grid-template-columns: max-content 1fr;
+    grid-template-areas: "chart legend";
+  }
+  &__chart {
+    grid-area: chart;
+  }
+  &__item {
+    list-style: none;
+    display: grid;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    align-content: center;
+
+    &:after {
+      content: attr(data-name);
+      padding-left: 15px;
+    }
+  }
+}
