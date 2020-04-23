@@ -41,6 +41,7 @@
     "@svgdotjs/svg.js": "^3.0.16",
     "air-datepicker": "^2.2.3",
     "autoprefixer": "^9.7.6",
+    "chart.js": "^2.9.3",
     "css-reset-and-normalize": "^2.1.0",
     "inputmask": "^5.0.3",
     "item-quantity-dropdown": "^2.1.0",

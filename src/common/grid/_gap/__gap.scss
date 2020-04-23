@@ -28,6 +28,10 @@
       grid-gap: 15px;
     }
 
+    &_18 {
+      grid-gap: 18px;
+    }
+
     &_24 {
       grid-gap: 24%;
     }
@@ -86,6 +90,9 @@
     }
     &_22 {
       grid-row-gap: 22px;
+    }
+    &_18 {
+      grid-row-gap: 18px;
     }
   }
 }
