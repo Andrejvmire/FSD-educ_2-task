@@ -34,7 +34,14 @@ append main
                             title: "Впечатления от номера",
                             className: '.grid.grid__list.grid__list_gap_20'
                         })
-                            h1 здесь будет pie
+                            .chart.chart__wrapper.grid.grid__auto-columns.grid__auto-columns_gap_30#chart
+                                .chart.chart__chart.chart__doughnut(data-radius= 58 data-stroke-width= 4)
+                                    .chart.chart__title.chart__title_position_center(data-postfix= "голосов")
+                                ul.chart.chart__legend.grid.grid__list.grid__list_gap_14
+                                    li.chart.chart__item(data-count= 130 data-color= 'linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%)' data-name= "Великолепно")
+                                    li.chart.chart__item(data-count= 65 data-color= 'linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%)' data-name= "Хорошо")
+                                    li.chart.chart__item(data-count= 65 data-color= 'linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)' data-name= "Удовлетворительно")
+                                    li.chart.chart__item(data-count= 0 data-color= 'linear-gradient(180deg, #919191 0%, #3D4975 100%)' data-name= "Разочарован")
                     +group({
                         title: "Отзывы посетителей номера",
                         comment: "2 отзыва",
