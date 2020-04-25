@@ -10,6 +10,6 @@ export default class HexColor {
     }
 
     get svgColor() {
-        return '#3D4975'
+        return this.color;
     }
 }
