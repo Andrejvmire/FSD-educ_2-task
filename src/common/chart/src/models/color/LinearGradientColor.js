@@ -41,13 +41,10 @@ export default class LinearGradientColor {
         return this.color;
     }
 
-    svgColor(SVG) {
-        return SVG.gradient('linear', (Gradient) => {
-            Gradient.from('0', '0')
-                .to('0', '1');
-            this.gradients.forEach( item => {
-                Gradient.stop(item.colorStop, item.color)
-            })
+    svgColor(color) {
+        return color({
+            angle: this.angle,
+            gradients: this.gradients
         })
     }
 }

@@ -27,7 +27,15 @@ export default class DoughnutView {
                     r: chart.radius,
                     fill: "transparent",
                     "stroke-width": chart.strokeWidth,
-                    stroke: item.data.color.svgColor(this.canvas),
+                    stroke: item.data.color.svgColor(color => {
+                        return this.canvas.gradient('linear', (Gradient) => {
+                            Gradient.from('0', '0')
+                                .to('0', '1');
+                            color.gradients.forEach( item => {
+                                Gradient.stop(item.colorStop, item.color)
+                            })
+                        })
+                    }),
                     "stroke-dashoffset": this.offset + 1,
                     "stroke-dasharray": this.strokeDasharray(chart.circleLength, legend.data.totalCount, item.count, 4)
                 })
