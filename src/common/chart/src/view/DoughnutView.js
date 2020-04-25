@@ -17,6 +17,7 @@ export default class DoughnutView {
         )
             .width(width)
             .height(height);
+        let textGroup = this.canvas.group();
         legend.items.forEach(item => {
             item.$self
                 .attr('style', "background: " + item.data.color.cssColor + ";");
@@ -41,5 +42,30 @@ export default class DoughnutView {
                 })
             }
         });
+        textGroup
+            .text(text => {
+                text
+                    .tspan(title.count)
+                    .newLine()
+                    .fill(title.data.color.svgColor)
+                    .x(50)
+                    .font({
+                        size: 24,
+                        family: "Quicksand",
+                        weight: 'bold'
+                    })
+                    .attr('text-anchor', "middle");
+                text
+                    .tspan(title.title.toUpperCase())
+                    .newLine()
+                    .fill(title.data.color.svgColor)
+                    .font({
+                        size: 12,
+                        family: "Montserrat",
+                        weight: 'bold'
+                    })
+                    .attr('text-anchor', "middle");
+            })
+            .move(30, 37)
     }
 }
