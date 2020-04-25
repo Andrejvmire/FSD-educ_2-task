@@ -6,6 +6,10 @@
   &__chart {
     grid-area: chart;
   }
+  &__legend {
+    grid-area: legend;
+    align-self: end;
+  }
   &__item {
     list-style: none;
     display: grid;
